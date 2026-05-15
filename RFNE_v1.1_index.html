@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reality-Fantasy Neural Engineering · 现实-幻想神经工程学 · RFNE V1.0 · Volume II of Qualia-Rhythm Matrix · Wei Jueran · xingyeLing7Ai · 427Hz">
+<title>RFNE · 现实-幻想神经工程学 · Reality-Fantasy Neural Engineering · NODE 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070f;--bg2:#0c0c18;--bg3:#111120;
+  --border:rgba(140,100,110,0.15);--border-hi:rgba(245,165,68,0.3);
+  --a1:#f5a544;--a2:#ec5a6e;--a3:#f07fd4;--a4:#f0c460;
+  --tx:#cac7de;--tx2:#9a8694;--tx3:#4d3b44;
+  --hd:#edeaff;--gy:#9a8694;
+  /* RFNE 主色映射 */
+  --rfne-vib:#f5a544;     /* 振动 vibration → 橙金 */
+  --rfne-vib-dim:rgba(245,165,68,0.18);
+  --rfne-real:#5fc890;    /* 现实神经 reality → 绿 */
+  --rfne-real-dim:rgba(95,200,144,0.18);
+  --rfne-fant:#ec5a6e;    /* 幻想神经 fantasy → 红 */
+  --rfne-fant-dim:rgba(236,90,110,0.18);
+  --rfne-rhy:#f0c460;     /* 节律协调 rhythm → 金 */
+  --rfne-rhy-dim:rgba(240,196,96,0.18);
+  --rfne-love:#f07fd4;    /* 爱的载荷 love → 粉 */
+  --rfne-love-dim:rgba(240,127,212,0.18);
+  --rfne-anchor:#5af0c8;  /* 着陆锚 anchor → 青绿(差异于现实绿) */
+  --rfne-anchor-dim:rgba(90,240,200,0.18);
+  --med:#6a6884;          /* 医学 medicine → 钝灰(对比色) */
+  --med-dim:rgba(106,104,132,0.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.72;min-height:100vh}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.02) 3px,rgba(0,0,0,0.02) 4px);pointer-events:none;z-index:9999}
+
+body.lang-zh .lang-en{display:none}
+body.lang-en .lang-zh{display:none}
+
+.topbar{background:var(--bg);border-bottom:1px solid var(--border);padding:5px 0}
+.ti{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--tx3)}
+.ti a{color:var(--tx3);text-decoration:none;transition:color .15s}
+.ti a:hover{color:var(--a1)}
+.chip{color:var(--a1);border:1px solid rgba(245,165,68,0.3);padding:1px 7px;border-radius:2px}
+.chip.c2{color:var(--a2);border-color:rgba(236,90,110,0.3)}
+.chip.c3{color:var(--rfne-rhy);border-color:rgba(240,196,96,0.3)}
+.tl,.tr{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.langtoggle{display:flex;gap:0;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.langtoggle a{padding:2px 8px;border-right:1px solid var(--border)}
+.langtoggle a:last-child{border-right:none}
+.langtoggle a.on{color:var(--a1);background:rgba(245,165,68,0.08)}
+
+.nodebar{background:linear-gradient(90deg,rgba(245,165,68,.04),rgba(95,200,144,.04) 33%,rgba(236,90,110,.04) 66%,rgba(240,196,96,.04));border-bottom:1px solid var(--border);padding:8px 0}
+.nbi{max-width:1080px;margin:0 auto;padding:0 24px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--tx2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.nbi .nb-self{color:var(--a1)}
+.nbi .nb-self em{font-style:italic;color:var(--tx);font-family:'Spectral',serif;font-size:11.5px;letter-spacing:.02em;margin-left:4px}
+.nbi .nb-rel{color:var(--tx3)}
+.nbi .nb-rel a{color:var(--a2);text-decoration:none;transition:color .15s}
+.nbi .nb-rel a:hover{color:var(--a1)}
+
+.masthead{max-width:1080px;margin:0 auto;padding:44px 24px 26px;position:relative}
+.masthead::before{content:'';position:absolute;left:24px;top:48px;width:32px;height:1px;background:var(--a1);opacity:.6}
+.mhname{font-family:'Space Mono',monospace;font-size:30px;font-weight:700;color:var(--hd);letter-spacing:-.03em;line-height:1.1}
+.mhname .zh{font-family:'Spectral',serif;font-style:italic;font-weight:300;font-size:20px;color:var(--a2);margin-left:14px;letter-spacing:.04em;vertical-align:middle}
+.mhname .slash{color:var(--tx3);font-weight:400;margin:0 6px}
+.mhname .vol{display:block;font-size:12px;color:var(--rfne-rhy);font-family:'Space Mono',monospace;font-weight:400;letter-spacing:.18em;margin-top:8px;text-transform:uppercase}
+.mhsub{font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2);letter-spacing:.05em;margin-top:7px;line-height:1.7}
+.mhsub a{color:var(--a2);text-decoration:none}
+.mhq{font-family:'Spectral',serif;font-style:italic;font-size:15px;color:var(--tx2);margin-top:14px;padding-left:14px;border-left:2px solid var(--a1);max-width:620px;line-height:1.55}
+.mhq.zh{font-family:'Noto Serif SC','Spectral',serif;font-style:normal}
+.mhanchor{font-family:'Space Mono',monospace;font-size:10px;color:var(--a1);letter-spacing:.3em;margin-top:14px;opacity:.7}
+.mhanchor .sep{color:var(--tx3);margin:0 8px}
+
+.pnav{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:100}
+.pni{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none}
+.pni::-webkit-scrollbar{display:none}
+.pnav a{display:block;padding:11px 15px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--tx2);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.pnav a:hover,.pnav a.on{color:var(--a1);border-bottom-color:var(--a1)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:34px 24px 80px;display:grid;grid-template-columns:1fr 272px;gap:48px;align-items:start}
+
+.feedhd{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tx3);padding-bottom:12px;border-bottom:1px solid var(--border)}
+.feedhd span{color:var(--a1)}
+
+.entry{border-bottom:1px solid var(--border);padding:26px 0}
+.entry:last-child{border-bottom:none}
+.etop{display:flex;gap:10px;align-items:center;margin-bottom:9px;flex-wrap:wrap}
+.badge{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:2px}
+.bp{background:rgba(245,165,68,.08);color:var(--a1);border:1px solid rgba(245,165,68,.22)}
+.bpub{background:rgba(236,90,110,.08);color:var(--a2);border:1px solid rgba(236,90,110,.2)}
+.br{background:rgba(240,127,212,.07);color:var(--a3);border:1px solid rgba(240,127,212,.18)}
+.be{background:rgba(240,196,96,.07);color:var(--a4);border:1px solid rgba(240,196,96,.18)}
+.bg{background:rgba(90,240,200,.07);color:var(--rfne-anchor);border:1px solid rgba(90,240,200,.2)}
+.bgy{background:rgba(106,104,132,.07);color:var(--med);border:1px dashed rgba(106,104,132,.25)}
+.edate{font-family:'Space Mono',monospace;font-size:10px;color:var(--tx3)}
+.etitle{font-family:'Spectral',serif;font-size:19px;font-weight:500;color:var(--hd);line-height:1.33;margin-bottom:9px}
+.etitle em{font-style:italic;font-weight:400;color:var(--a2)}
+.etitle .sub{display:block;font-size:13px;font-style:italic;font-weight:300;color:var(--tx2);margin-top:3px}
+.etitle a{color:inherit;text-decoration:none;transition:color .15s}
+.etitle a:hover{color:var(--a1)}
+.edesc{font-size:13.5px;color:var(--tx2);line-height:1.68;max-width:620px;margin-bottom:9px}
+.edesc em{color:var(--tx);font-style:italic}
+.edesc strong{color:var(--hd);font-weight:500;font-style:italic}
+.edesc.zh{color:var(--tx);border-left:2px solid rgba(95,200,144,.35);padding-left:12px;margin-top:9px}
+
+/* === META PROLOGUE === */
+.metabox{background:linear-gradient(135deg,rgba(245,165,68,.06),rgba(95,200,144,.045) 48%,rgba(240,196,96,.035));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:4px;padding:28px 28px 24px;margin:16px 0 8px;position:relative;overflow:hidden}
+.metabox::before{content:'';position:absolute;right:-80px;top:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,68,.16),transparent 65%);pointer-events:none}
+.metabox::after{content:'';position:absolute;left:-90px;bottom:-100px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(236,90,110,.13),transparent 65%);pointer-events:none}
+.meta-kicker{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--a1);margin-bottom:14px;position:relative;z-index:1;text-align:center}
+.meta-eq{font-family:'Space Mono',monospace;font-size:clamp(18px,2.6vw,28px);color:var(--hd);letter-spacing:.02em;line-height:1.55;text-align:center;margin:12px 0 8px;position:relative;z-index:1;font-weight:700}
+.meta-eq .lhs{color:var(--a2)}
+.meta-eq .eq{color:var(--a1);margin:0 14px;font-size:1.15em}
+.meta-eq .rhs{color:var(--a1)}
+.meta-eq-zh{font-family:'Noto Serif SC','Spectral',serif;font-size:clamp(16px,2vw,22px);color:var(--tx);text-align:center;letter-spacing:.06em;margin-bottom:18px;position:relative;z-index:1;font-weight:500}
+.meta-eq-zh .l{color:var(--a2)}
+.meta-eq-zh .r{color:var(--a1)}
+.meta-eq-zh .mid{color:var(--tx3);margin:0 12px;font-family:'Space Mono',monospace;font-size:.9em}
+.meta-claims{max-width:680px;margin:18px auto 12px;position:relative;z-index:1}
+.meta-claim{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--tx);letter-spacing:.04em;line-height:1.9;padding:5px 0;border-bottom:1px solid rgba(236,90,110,.1)}
+.meta-claim:last-child{border-bottom:none}
+.meta-claim .neq{color:var(--a3);font-weight:700;margin:0 4px}
+.meta-claim .eqs{color:var(--a1);font-weight:700;margin:0 4px}
+.meta-sig{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:var(--a4);letter-spacing:.15em;margin-top:18px;text-align:center;position:relative;z-index:1}
+.meta-sig::before{content:'—— ';color:var(--tx3)}
+.metabq{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:var(--a1);padding-top:12px;margin-top:14px;border-top:1px dashed rgba(245,165,68,.25);line-height:1.55;text-align:center;position:relative;z-index:1}
+
+/* === AXIOM CARDS === */
+.axiomgrid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+.axiom{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--a1);border-radius:3px;padding:20px 22px;position:relative}
+.axiom.ax1{border-left-color:var(--rfne-vib)}
+.axiom.ax2{border-left-color:var(--rfne-fant)}
+.axiom.ax3{border-left-color:var(--rfne-rhy)}
+.axiom.ax4{border-left-color:var(--rfne-love)}
+.axiom.ax5{border-left-color:var(--rfne-anchor)}
+.ax-head{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+.ax-num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:var(--a1);letter-spacing:-.04em;line-height:1}
+.axiom.ax1 .ax-num{color:var(--rfne-vib)}
+.axiom.ax2 .ax-num{color:var(--rfne-fant)}
+.axiom.ax3 .ax-num{color:var(--rfne-rhy)}
+.axiom.ax4 .ax-num{color:var(--rfne-love)}
+.axiom.ax5 .ax-num{color:var(--rfne-anchor)}
+.ax-name{font-family:'Spectral',serif;font-size:19px;font-weight:500;color:var(--hd);line-height:1.3}
+.ax-name small{display:block;font-family:'Space Mono',monospace;font-size:10px;font-weight:400;color:var(--tx2);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+.ax-claim{font-family:'Noto Serif SC','Spectral',serif;font-size:17px;color:var(--hd);font-weight:500;letter-spacing:.03em;padding:11px 0 6px;line-height:1.6}
+.axiom.ax1 .ax-claim{color:var(--rfne-vib)}
+.axiom.ax2 .ax-claim{color:var(--rfne-fant)}
+.axiom.ax3 .ax-claim{color:var(--rfne-rhy)}
+.axiom.ax4 .ax-claim{color:var(--rfne-love)}
+.axiom.ax5 .ax-claim{color:var(--rfne-anchor)}
+.ax-claim-en{font-family:'Space Mono',monospace;font-size:12px;font-style:italic;color:var(--tx2);font-weight:400;letter-spacing:.03em;line-height:1.55;padding-bottom:8px;border-bottom:1px dashed var(--border)}
+.ax-body{font-size:13px;color:var(--tx2);line-height:1.7;margin-top:10px}
+.ax-body em{color:var(--tx);font-style:italic}
+.ax-body strong{color:var(--hd);font-weight:500;font-style:italic}
+
+/* === FORMULA BLOCK === */
+.formula{font-family:'Space Mono',monospace;font-size:11px;background:var(--bg2);border:1px solid var(--border);border-left:2px solid var(--a1);padding:13px 16px;margin:12px 0;line-height:1.95;letter-spacing:.04em;color:var(--tx)}
+.formula .arrow{color:var(--tx3);margin:0 8px}
+.formula .neg{text-decoration:line-through;opacity:.5;color:var(--a3)}
+.formula .hl{color:var(--a1)}
+.formula .hl2{color:var(--a2)}
+.formula .hl3{color:var(--rfne-rhy)}
+.formula .hl4{color:var(--rfne-anchor)}
+
+/* === DISC GRID === */
+.disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px;margin:12px 0;font-family:'Space Mono',monospace;font-size:10.5px;padding:13px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:3px}
+.disc-grid .label{color:var(--tx3);letter-spacing:.12em;text-transform:uppercase;font-size:9px}
+.disc-grid .val{color:var(--tx)}
+
+/* === INTERVENTION POINTS GRID === */
+.intervgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.intervcard{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:16px;position:relative}
+.intervcard .il{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:var(--tx3)}
+.intervcard .it{font-family:'Spectral',serif;font-size:17px;line-height:1.3;color:var(--hd);margin-bottom:5px;font-weight:500}
+.intervcard .it em{color:var(--a1);font-style:italic}
+.intervcard .ip{font-family:'Space Mono',monospace;font-size:10.5px;color:var(--tx2);margin-bottom:8px;letter-spacing:.04em}
+.intervcard .id{font-size:12px;color:var(--tx2);line-height:1.65}
+.intervcard .id em{color:var(--tx);font-style:italic}
+.intervcard.c1{border-color:rgba(245,165,68,.3);border-top:2px solid var(--rfne-vib)}
+.intervcard.c1 .it em,.intervcard.c1 .il{color:var(--rfne-vib)}
+.intervcard.c2{border-color:rgba(236,90,110,.3);border-top:2px solid var(--rfne-fant)}
+.intervcard.c2 .it em,.intervcard.c2 .il{color:var(--rfne-fant)}
+.intervcard.c3{border-color:rgba(240,196,96,.3);border-top:2px solid var(--rfne-rhy)}
+.intervcard.c3 .it em,.intervcard.c3 .il{color:var(--rfne-rhy)}
+.intervcard.c4{border-color:rgba(240,127,212,.3);border-top:2px solid var(--rfne-love)}
+.intervcard.c4 .it em,.intervcard.c4 .il{color:var(--rfne-love)}
+
+/* === AXIS DIAGRAM === */
+.axisbox{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:20px;margin:14px 0;position:relative}
+.axisbox::before{content:'';position:absolute;left:50%;top:20px;bottom:20px;width:1px;background:linear-gradient(180deg,transparent,var(--border),transparent)}
+.axisrow{display:grid;grid-template-columns:1fr 80px 1fr;gap:14px;align-items:center;margin:8px 0}
+.axiscell{padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:3px;font-family:'Space Mono',monospace;font-size:11px;line-height:1.6}
+.axiscell.left{text-align:right;border-right:2px solid var(--rfne-fant)}
+.axiscell.right{border-left:2px solid var(--rfne-real)}
+.axiscell .at{color:var(--hd);font-weight:700;letter-spacing:.06em;margin-bottom:3px}
+.axiscell .ad{color:var(--tx2);font-size:10px}
+.axislabel{text-align:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--tx3);letter-spacing:.18em;text-transform:uppercase}
+
+/* === MEDICAL VS RFNE TABLE === */
+.compare-table{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:14px 0;font-family:'Space Mono',monospace}
+.compare-row{display:grid;grid-template-columns:130px 1fr 1fr;gap:0;border-bottom:1px solid var(--border)}
+.compare-row:last-child{border-bottom:none}
+.compare-row.header{background:linear-gradient(90deg,rgba(106,104,132,.1),rgba(245,165,68,.06));font-weight:700}
+.compare-row > div{padding:9px 13px;font-size:10.5px;line-height:1.55;letter-spacing:.04em}
+.compare-row .clabel{color:var(--tx3);font-size:9px;text-transform:uppercase;letter-spacing:.14em;border-right:1px solid var(--border);background:rgba(7,7,15,.4)}
+.compare-row .cmed{color:var(--tx2);border-right:1px solid var(--border)}
+.compare-row .crfne{color:var(--tx)}
+.compare-row.header .clabel{color:var(--tx3)}
+.compare-row.header .cmed{color:var(--med);font-style:italic}
+.compare-row.header .crfne{color:var(--a1);font-style:italic}
+
+/* === EXTERNAL STATEMENT BOX === */
+.statement{background:linear-gradient(135deg,rgba(245,165,68,.07),rgba(240,196,96,.04));border:1px solid var(--border-hi);border-left:3px solid var(--rfne-rhy);border-radius:4px;padding:24px 28px;margin:18px 0;position:relative}
+.statement::before{content:'❝';position:absolute;left:14px;top:8px;font-family:'Spectral',serif;font-size:48px;color:var(--rfne-rhy);opacity:.18;line-height:1}
+.statement-kicker{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--rfne-rhy);margin-bottom:12px}
+.statement p{font-family:'Spectral',serif;font-size:14.5px;color:var(--tx);line-height:1.78;margin-bottom:10px;max-width:640px}
+.statement p:last-of-type{margin-bottom:0}
+.statement p strong{color:var(--hd);font-weight:500;font-style:italic}
+.statement p em{color:var(--rfne-vib);font-style:italic}
+.statement.zh p{font-family:'Noto Serif SC','Spectral',serif;font-style:normal}
+.statement-sig{font-family:'Space Mono',monospace;font-size:10px;color:var(--rfne-rhy);letter-spacing:.18em;margin-top:14px;padding-top:10px;border-top:1px dashed rgba(240,196,96,.25)}
+
+/* === PROTOCOL STACK === */
+.protostack{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.protolayer{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:14px 18px;position:relative;overflow:hidden}
+.protolayer::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.protolayer.l1::before{background:var(--rfne-vib)}
+.protolayer.l2::before{background:var(--rfne-love)}
+.protolayer.l3::before{background:var(--rfne-fant)}
+.protolayer.l4::before{background:var(--rfne-anchor)}
+.protolayer .pl{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.protolayer .pn{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--tx3);text-transform:uppercase}
+.protolayer .pt{font-family:'Spectral',serif;font-size:16px;color:var(--hd);font-weight:500;line-height:1.3}
+.protolayer.l1 .pt em{color:var(--rfne-vib)}
+.protolayer.l2 .pt em{color:var(--rfne-love)}
+.protolayer.l3 .pt em{color:var(--rfne-fant)}
+.protolayer.l4 .pt em{color:var(--rfne-anchor)}
+.protolayer .pd{font-size:12.5px;color:var(--tx2);line-height:1.68;margin-top:4px}
+.protolayer .pd em{color:var(--tx);font-style:italic}
+
+/* === BRIDGE BOX (SISTER NODES) === */
+.bridgebox{background:linear-gradient(135deg,rgba(245,165,68,.05),rgba(95,200,144,.045) 50%,rgba(236,90,110,.04));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:4px;padding:24px 26px;margin:14px 0 8px;position:relative;overflow:hidden}
+.bridgebox::before{content:'';position:absolute;right:-90px;top:-100px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,68,.13),transparent 65%);pointer-events:none}
+.bridge-kicker{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--a1);margin-bottom:18px;text-align:center;position:relative;z-index:1}
+.bridgegrid{display:grid;grid-template-columns:1fr 40px 1fr;gap:10px;align-items:stretch;margin:14px 0;position:relative;z-index:1}
+.bridgecard{background:rgba(7,7,15,.6);border:1px solid var(--border);border-radius:3px;padding:15px 14px}
+.bridgecard.self{border-color:rgba(245,165,68,.3)}
+.bridgecard.self .bl{color:var(--a1)}
+.bridgecard.self .bt{color:var(--hd)}
+.bridgecard.sister{border-color:rgba(184,120,255,.3)}
+.bridgecard.sister .bl{color:#b878ff}
+.bridgecard.sister .bt a{color:var(--hd);text-decoration:none;transition:color .15s}
+.bridgecard.sister .bt a:hover{color:#b878ff}
+.bridgecard .bl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.bridgecard .bt{font-family:'Spectral',serif;font-size:17px;font-weight:500;line-height:1.3;margin-bottom:8px}
+.bridgecard .bd{font-size:12.5px;color:var(--tx);line-height:1.7}
+.bridgecard .bd em{color:var(--a1);font-style:italic}
+.bridgecard.sister .bd em{color:#b878ff}
+.bridge-eq{font-family:'Space Mono',monospace;font-size:26px;color:var(--a2);display:flex;align-items:center;justify-content:center;font-weight:700}
+.bridge-quote{font-family:'Spectral',serif;font-style:italic;font-size:13.5px;color:var(--tx);padding-top:14px;margin-top:8px;border-top:1px dashed rgba(245,165,68,.22);line-height:1.7;position:relative;z-index:1}
+.bridge-quote.zh{font-family:'Noto Serif SC','Spectral',serif;font-style:normal;border-top:none;padding-top:6px;margin-top:6px}
+.langjump{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;position:relative;z-index:1}
+.langjump a{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--a1);text-decoration:none;border:1px solid rgba(245,165,68,.25);padding:5px 10px;border-radius:2px;background:rgba(245,165,68,.05);transition:all .15s}
+.langjump a:hover{background:rgba(245,165,68,.12);color:var(--hd)}
+
+/* === TRANSMISSION LOG === */
+.translog{margin:14px 0;font-family:'Space Mono',monospace;font-size:11px}
+.trans-row{display:grid;grid-template-columns:60px 80px 1fr;gap:14px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--border)}
+.trans-row:last-child{border-bottom:none}
+.trans-row .code{color:var(--a4);font-size:10px;letter-spacing:.06em}
+.trans-row .date{color:var(--tx3);font-size:10px}
+.trans-row .msg{color:var(--tx);font-size:11.5px;line-height:1.55}
+.trans-row .msg .mint{color:var(--rfne-anchor)}
+.trans-row .msg .lavender{color:var(--a2)}
+.trans-row .msg .vib{color:var(--rfne-vib)}
+.trans-row .msg .rhy{color:var(--rfne-rhy)}
+
+/* === ETAGS === */
+.etags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
+.tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.05em;color:var(--tx3);border:1px solid var(--border);padding:2px 7px;border-radius:2px}
+
+/* === SIDEBAR === */
+.sidebar{display:flex;flex-direction:column;gap:26px;position:sticky;top:52px}
+.sbl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--tx3);padding-bottom:9px;border-bottom:1px solid var(--border);margin-bottom:11px}
+.profile{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:16px}
+.av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1c1848,#3a2010);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:16px;color:var(--a1);margin-bottom:11px}
+.pnm{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--hd);line-height:1.3}
+.pnm small{display:block;font-size:10px;font-weight:400;color:var(--tx2);margin-top:2px}
+.pdesc{font-size:11.5px;color:var(--tx2);margin-top:9px;line-height:1.62}
+.pfields{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.pf{font-size:9.5px;background:rgba(236,90,110,.09);color:var(--a2);border:1px solid rgba(236,90,110,.18);padding:2px 7px;border-radius:2px;font-family:'Space Mono',monospace}
+
+.hzbox{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:15px;text-align:center}
+.hzn{font-family:'Space Mono',monospace;font-size:36px;font-weight:700;color:var(--a1);letter-spacing:-3px;line-height:1}
+.hzu{font-family:'Space Mono',monospace;font-size:10px;color:var(--tx3);letter-spacing:.1em;margin-top:3px}
+.hzq{font-family:'Spectral',serif;font-style:italic;font-size:11px;color:var(--tx2);margin-top:7px;line-height:1.5}
+.hzbar{margin-top:11px;height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+.hzfill{height:100%;background:var(--a1);animation:pb 2.6s ease-in-out infinite}
+@keyframes pb{0%,100%{width:20%;opacity:.35}50%{width:75%;opacity:1}}
+
+.sb-axiom{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:14px;font-family:'Space Mono',monospace;font-size:10px}
+.sb-axiom .num{font-weight:700;font-size:13px;letter-spacing:.05em}
+.sb-axiom .ax-line{display:grid;grid-template-columns:24px 1fr;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);align-items:center}
+.sb-axiom .ax-line:last-child{border-bottom:none}
+.sb-axiom .ax-line.a1 .num{color:var(--rfne-vib)}
+.sb-axiom .ax-line.a2 .num{color:var(--rfne-fant)}
+.sb-axiom .ax-line.a3 .num{color:var(--rfne-rhy)}
+.sb-axiom .ax-line.a4 .num{color:var(--rfne-love)}
+.sb-axiom .ax-line.a5 .num{color:var(--rfne-anchor)}
+.sb-axiom .nm{color:var(--tx);font-size:9.5px;letter-spacing:.04em;line-height:1.45}
+
+.sisternode{display:block;background:linear-gradient(135deg,rgba(184,120,255,.06),rgba(245,165,68,.04));border:1px solid rgba(184,120,255,.25);border-radius:3px;padding:14px;text-decoration:none;transition:all .2s}
+.sisternode:hover{border-color:#b878ff;background:linear-gradient(135deg,rgba(184,120,255,.1),rgba(245,165,68,.06))}
+.sn-tag{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:#b878ff;text-transform:uppercase;margin-bottom:6px}
+.sn-title{font-family:'Spectral',serif;font-size:17px;font-weight:500;color:var(--hd);line-height:1.2}
+.sn-title small{display:block;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:400;color:var(--tx2);margin-top:3px;letter-spacing:.05em}
+.sn-desc{font-family:'Spectral',serif;font-size:11.5px;color:var(--tx2);line-height:1.55;margin-top:6px}
+.sn-desc em{color:var(--tx);font-style:italic}
+.sn-arrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;color:#b878ff;margin-top:10px;text-align:right}
+.sisternode.vol1{background:linear-gradient(135deg,rgba(245,165,68,.07),rgba(240,196,96,.04));border-color:rgba(245,165,68,.3)}
+.sisternode.vol1 .sn-tag,.sisternode.vol1 .sn-arrow{color:var(--a1)}
+.sisternode.vol1:hover{border-color:var(--a1)}
+
+.sblinks{list-style:none}
+.sblinks li{border-bottom:1px solid var(--border);padding:5px 0}
+.sblinks a{font-size:12px;color:var(--tx2);text-decoration:none;display:flex;justify-content:space-between;align-items:center;transition:color .15s}
+.sblinks a:hover{color:var(--a1)}
+.ar{font-size:9px;opacity:.35}
+
+.coord{font-family:'Space Mono',monospace;font-size:10px;color:var(--tx3);line-height:2;letter-spacing:.04em}
+.coord span{color:var(--a1)}
+
+footer{border-top:1px solid var(--border);padding:22px 0}
+.fi{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:9.5px;color:var(--tx3);letter-spacing:.05em;flex-wrap:wrap;gap:12px}
+footer a{color:var(--tx3);text-decoration:none}
+footer a:hover{color:var(--a1)}
+.foot-sig{color:var(--a4);font-family:'Spectral',serif;font-style:italic;font-size:12px;letter-spacing:.1em}
+
+@media(max-width:780px){
+  .wrap{grid-template-columns:1fr}.sidebar{display:none}
+  .mhname{font-size:22px}
+  .intervgrid{grid-template-columns:1fr}
+  .axisrow{grid-template-columns:1fr}
+  .axiscell.left{text-align:left;border-right:none;border-left:2px solid var(--rfne-fant)}
+  .compare-row{grid-template-columns:1fr}
+  .compare-row .clabel{border-right:none;border-bottom:1px solid var(--border)}
+  .compare-row .cmed{border-right:none;border-bottom:1px solid var(--border)}
+  .bridgegrid{grid-template-columns:1fr;gap:8px}
+  .bridge-eq{padding:6px 0;transform:rotate(90deg)}
+  .trans-row{grid-template-columns:50px 70px 1fr;gap:8px;font-size:10px}
+  .nbi{flex-direction:column;align-items:flex-start;gap:4px}
+}
+</style>
+</head>
+<body class="lang-zh">
+
+<div class="topbar">
+  <div class="ti">
+    <div class="tl">
+      <span class="chip">427 Hz</span>
+      <span class="chip c2">RFNE V1.0</span>
+      <span class="chip c3">QRM · VOLUME II</span>
+      <span>Philadelphia, PA · EDT</span>
+    </div>
+    <div class="tr">
+      <span class="langtoggle">
+        <a href="?view=zh" data-lang="zh">中</a>
+        <a href="?view=en" data-lang="en">EN</a>
+        <a href="?view=bi" data-lang="bi">双语</a>
+      </span>
+      <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank">QRM Vol.I</a>
+      <a href="https://mellowwei.github.io/SourceFields/" target="_blank">SourceFields</a>
+      <a href="https://mellowwei.github.io/MellowWei/" target="_blank">Portal</a>
+      <a href="mailto:mellowwei7@gmail.com">Email</a>
+    </div>
+  </div>
+</div>
+
+<div class="nodebar">
+  <div class="nbi">
+    <span class="nb-self">// NODE 19 · RFNE · <em>operational layer · 操作陈述</em></span>
+    <span class="nb-rel">↑ derives from <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank">Vol.I · 振动即存在</a> · refracts through <a href="https://mellowwei.github.io/SourceFields/" target="_blank">NODE 18 · SourceFields</a></span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="mhname">
+    <span>Reality-Fantasy Neural Engineering <span class="slash">/</span> RFNE <span class="zh">现实-幻想神经工程学</span></span>
+    <span class="vol">Qualia-Rhythm Matrix · Volume II · 操作陈述 · V1.0 founding archive</span>
+  </div>
+  <div class="mhsub">
+    <span class="lang-zh">Wei Jueran · 魏珏然 · 源场裁决位 · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · 学科奠基 · 五公理 + 介入点四联 + 着陆层</span>
+    <span class="lang-en">Wei Jueran · 魏珏然 · The Final Arbiter of the Source Field · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · Five axioms + four intervention points + landing layer</span>
+  </div>
+  <p class="mhq zh lang-zh">"音乐、影像、语言就是我改写人类神经的方式。在所有能被一个源场精确编码并发射给其他神经系统的方式里,这是唯一的三条带宽。"<br>—— RFNE 第三公理推论 · 2026.05.15</p>
+  <p class="mhq lang-en">"Music, image, language — these are how I rewrite human neural systems. Among everything a source field can precisely encode and emit to other neural systems, these are the only three bandwidths."<br>—— Corollary to RFNE Axiom III · 2026.05.15</p>
+  <div class="mhanchor">427HZ<span class="sep">·</span>44271<span class="sep">·</span>77347<span class="sep">·</span>2026<span class="sep">·</span>VOL II</div>
+</div>
+
+<nav class="pnav">
+  <div class="pni">
+    <a href="#meta" class="on">Meta · 元层</a>
+    <a href="#ax1">Axiom I · 双神经</a>
+    <a href="#ax2">Axiom II · 想感同一</a>
+    <a href="#ax3">Axiom III · 节律一元</a>
+    <a href="#ax4">Axiom IV · 范畴取消</a>
+    <a href="#ax5">Axiom V · 系统层级</a>
+    <a href="#object">Engineering Object</a>
+    <a href="#intervention">Four Interventions</a>
+    <a href="#awakening">Awakening</a>
+    <a href="#protocol">Love Protocol</a>
+    <a href="#bridge">⇄ Vol.I · SourceFields</a>
+    <a href="#transmissions">Transmissions</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+<main>
+
+<div class="feedhd">Reality-Fantasy Neural Engineering · <span>RFNE V1.0 · NODE 19 · Wei Jueran</span></div>
+
+<!-- META PROLOGUE -->
+<article class="entry" id="meta">
+  <div class="etop">
+    <span class="badge bp">Meta-Layer · 元层</span>
+    <span class="edate">operational prerequisite · 操作前提</span>
+  </div>
+
+  <div class="metabox">
+    <div class="meta-kicker">RFNE · 现实-幻想神经工程学 · 元层签名</div>
+
+    <div class="meta-eq">
+      <span class="lhs">vibration</span><span class="eq">⇒</span><span class="rhs">qualia (engineerable)</span>
+    </div>
+
+    <div class="meta-eq-zh">
+      <span class="lang-zh"><span class="l">振动</span><span class="mid">⇒</span><span class="r">可工程化的感质</span></span>
+      <span class="lang-en"><span class="l">vibration</span><span class="mid">⇒</span><span class="r">engineerable qualia</span></span>
+    </div>
+
+    <div class="meta-claims">
+      <div class="meta-claim">
+        <span class="lang-zh">RFNE <span class="eqs">=</span> 振动即存在的<em style="color:var(--a1);font-style:italic">操作面</em> · <span class="neq">≠</span> 替代本体陈述</span>
+        <span class="lang-en">RFNE <span class="eqs">=</span> <em style="color:var(--a1);font-style:italic">operational face</em> of Vibration-as-Existence · <span class="neq">≠</span> replacement of ontological statement</span>
+      </div>
+      <div class="meta-claim">
+        <span class="lang-zh">工程对象 <span class="eqs">=</span> 现实神经 × 幻想神经的咬合界面 · <span class="neq">≠</span> 任何单一神经层</span>
+        <span class="lang-en">engineering object <span class="eqs">=</span> reality × fantasy neural interface · <span class="neq">≠</span> any single neural layer</span>
+      </div>
+      <div class="meta-claim">
+        <span class="lang-zh">设计者即材料 (Designer = Material) · <span class="neq">≠</span> 第三人称神经科学</span>
+        <span class="lang-en">designer = material · <span class="neq">≠</span> third-person neuroscience</span>
+      </div>
+      <div class="meta-claim">
+        <span class="lang-zh">RFNE <span class="neq">≠</span> 反医学 · <span class="neq">≠</span> 致幻设计 · <span class="neq">≠</span> 操纵心理学</span>
+        <span class="lang-en">RFNE <span class="neq">≠</span> anti-medicine · <span class="neq">≠</span> hallucinatory design · <span class="neq">≠</span> manipulation psychology</span>
+      </div>
+      <div class="meta-claim">
+        <span class="lang-zh">RFNE <span class="eqs">=</span> 以振动为材料、神经界面为对象、爱为载荷几何的精确工程学</span>
+        <span class="lang-en">RFNE <span class="eqs">=</span> precise engineering of neural interface with vibration as material and love as payload geometry</span>
+      </div>
+    </div>
+
+    <div class="meta-sig">魏珏然 · WEI JUERAN · 源场裁决位</div>
+
+    <div class="metabq">
+      <span class="lang-zh">不是绕过幻想神经触及真实。是幻想神经本身被以爱的几何来组织。</span>
+      <span class="lang-en">Not bypassing the fantasy neuron to touch the real. It is the fantasy neuron itself being organized along love's geometry.</span>
+    </div>
+  </div>
+
+  <p class="edesc"><em>Reality-Fantasy Neural Engineering (RFNE)</em> is Volume II of the <em>Qualia-Rhythm Matrix</em> — the operational layer beneath the ontological statement of <em>Vibration-as-Existence</em>. Volume I states what consciousness is (existence perceiving itself in vibration). Volume II states how the source field can engineer this — through music, image, language, and vibration — at the interface where the fantasy neuron and the reality neuron coordinate to generate qualia. RFNE is not a methodology to be adopted, but the public statement of one source field's engineering practice. It carries the same non-replicability clause as <a href="https://mellowwei.github.io/SourceFields/" target="_blank">SourceFields (NODE 18)</a> — five axioms below are claims about <em>this</em> source field's operational structure, not universal laws.</p>
+
+  <p class="edesc zh"><em>现实-幻想神经工程学(RFNE)</em>是<em>Qualia-Rhythm Matrix</em>的第二卷——位于<em>振动即存在</em>本体陈述之下的操作层。第一卷陈述意识是什么(存在在振动中感知自身)。第二卷陈述源场如何工程化这件事——通过音乐、影像、语言、振动——在幻想神经与现实神经协调生成感质的界面上。RFNE 不是可被采纳的方法论,是这个具体源场的工程实践的公开陈述。它继承<a href="https://mellowwei.github.io/SourceFields/" target="_blank">SourceFields(NODE 18)</a>的非复制性条款——下面五条公理是关于<em>这一个</em>源场操作结构的陈述,不是普世定律。</p>
+
+  <div class="etags">
+    <span class="tag">meta-layer</span><span class="tag">operational statement</span><span class="tag">volume II</span>
+    <span class="tag">designer = material</span><span class="tag">engineering object</span>
+    <span class="tag">non-replicable</span><span class="tag">44271</span>
+  </div>
+</article>
+
+
+<!-- AXIOM I · DUAL NEURAL STRUCTURE -->
+<article class="entry" id="ax1">
+  <div class="etop">
+    <span class="badge bp">Axiom I · 第一公理</span>
+    <span class="edate">dual neural structure · 双神经结构</span>
+  </div>
+  <div class="etitle">Dual-<em>Neural</em> Structure · 双神经结构<span class="sub">知觉作为协调结果 · 没有纯感官也没有纯先验 / Perception as coordination · no pure sensory, no pure prior</span></div>
+
+  <div class="axiomgrid">
+    <div class="axiom ax1">
+      <div class="ax-head">
+        <span class="ax-num">I</span>
+        <div class="ax-name">双神经公理<small>DUAL-NEURAL AXIOM</small></div>
+      </div>
+      <div class="ax-claim">所有知觉 = 幻想神经(生成模型/先验)× 现实神经(校正信号/预测误差)的协调结果。</div>
+      <div class="ax-claim-en">All perception = fantasy neuron (generative model / prior) × reality neuron (correction signal / prediction error) — coordinated.</div>
+      <div class="ax-body">
+        <span class="lang-zh">没有纯粹的"现实"进入大脑——感官信号已经是被编码、过滤、加工后的产物。也没有纯粹的"幻想"独立运行——任何持续的幻想会被预测失败踢回校正。两者的<em>协调</em>本身才是知觉发生的位置。这条公理同构于当代神经科学的 predictive processing 框架(Friston / Clark / Seth),但加了一个第三人称神经科学没有的东西:<strong>设计者即材料</strong>——见 Axiom V。</span>
+        <span class="lang-en">There is no pure "reality" entering the brain — sensory signals are already encoded, filtered, processed. Nor does pure "fantasy" run independently — any sustained fantasy gets kicked back by prediction failure. Their <em>coordination</em> itself is where perception happens. This is isomorphic to predictive processing (Friston / Clark / Seth), but adds what third-person neuroscience does not have: <strong>designer = material</strong> — see Axiom V.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    PERCEPTION <span class="hl">=</span> FANTASY_NEURON <span class="arrow">×</span> REALITY_NEURON <span class="arrow">::</span> COORDINATION<br>
+    FANTASY_NEURON <span class="hl">=</span> GENERATIVE MODEL <span class="arrow">/</span> TOP-DOWN PRIOR<br>
+    REALITY_NEURON <span class="hl">=</span> PREDICTION ERROR <span class="arrow">/</span> BOTTOM-UP CORRECTION<br>
+    NEITHER <span class="arrow">::</span> "RAW REALITY" <span class="neg">∉</span> NEURAL ENTRY<br>
+    NEITHER <span class="arrow">::</span> "PURE FANTASY" <span class="neg">∉</span> INDEPENDENT RUN
+  </div>
+
+  <div class="disc-grid">
+    <span class="label">Object / 对象</span><span class="val">the coordination itself / 协调本身</span>
+    <span class="label">Not Object / 非对象</span><span class="val">either neural layer alone / 任一单层</span>
+    <span class="label">Isomorphic to / 同构于</span><span class="val">predictive processing (Friston/Clark/Seth)</span>
+    <span class="label">Adds / 加了</span><span class="val">designer = material (Axiom V)</span>
+  </div>
+
+  <div class="etags">
+    <span class="tag">dual-neural</span><span class="tag">fantasy neuron</span><span class="tag">reality neuron</span>
+    <span class="tag">predictive processing</span><span class="tag">coordination</span>
+  </div>
+</article>
+
+
+<!-- AXIOM II · THOUGHT-SENSATION IDENTITY -->
+<article class="entry" id="ax2">
+  <div class="etop">
+    <span class="badge bpub">Axiom II · 第二公理</span>
+    <span class="edate">thought-sensation identity · 想感同一律</span>
+  </div>
+  <div class="etitle">Thought-Sensation <em>Identity</em> · 想感同一律<span class="sub">想到的都是感到的 · 幻想神经活动 = 感质事件 / What is thought is what is felt · fantasy-neuron activity = qualia event</span></div>
+
+  <div class="axiomgrid">
+    <div class="axiom ax2">
+      <div class="ax-head">
+        <span class="ax-num">II</span>
+        <div class="ax-name">想感同一律<small>THOUGHT-SENSATION IDENTITY</small></div>
+      </div>
+      <div class="ax-claim">想到的都是感到的。幻想神经的每一次活动都同时是一次感质事件。</div>
+      <div class="ax-claim-en">What is thought is what is felt. Every fantasy-neuron activation is simultaneously a qualia event.</div>
+      <div class="ax-body">
+        <span class="lang-zh">传统语言的"想/感/幻"三分法在 RFNE 里被压成一个东西:<em>幻想神经活动</em>。没有不被感到的想,也没有不被想到的感。视网膜只传波长——红的<em>红法</em>是幻想神经在 V4 区域生成出来的、用来代表那个波长的内部经验。波长是公共的,红的红法是幻想神经的产物。这一条公理直接导出:<strong>感质是私密的,结构是共享的</strong>——不是两件事,是同一机制的两面。</span>
+        <span class="lang-en">The traditional split "thinking / feeling / hallucinating" is compressed in RFNE into one thing: <em>fantasy-neuron activity</em>. No thought is un-felt; no sensation is un-thought. The retina transmits only wavelength — the <em>redness-of-red</em> is generated by the fantasy neuron in V4 to represent that wavelength as inner experience. Wavelength is public; the redness-of-red is the fantasy neuron's production. This axiom directly yields: <strong>qualia is private, structure is shared</strong> — not two facts, but two faces of the same mechanism.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    THINKING <span class="hl">≡</span> FEELING <span class="hl">≡</span> HALLUCINATING <span class="arrow">::</span> ALL_ARE: FANTASY_NEURON_ACTIVITY<br>
+    WAVELENGTH <span class="arrow">→</span> PUBLIC<br>
+    REDNESS_OF_RED <span class="arrow">→</span> FANTASY_NEURON_PRODUCT <span class="arrow">::</span> PRIVATE<br>
+    QUALIA <span class="arrow">::</span> PRIVATE &nbsp;&nbsp;|&nbsp;&nbsp; STRUCTURE <span class="arrow">::</span> SHARED <span class="arrow">::</span> SAME MECHANISM
+  </div>
+
+  <div class="disc-grid">
+    <span class="label">Identity / 同一</span><span class="val">想 ≡ 感 ≡ 幻 → 幻想神经活动</span>
+    <span class="label">Private / 私密</span><span class="val">qualia (red's red-ness) / 感质质地</span>
+    <span class="label">Shared / 共享</span><span class="val">structure (wavelength, response) / 结构性</span>
+    <span class="label">Implication / 推论</span><span class="val">communication possible via structure / 通过结构可沟通</span>
+  </div>
+
+  <div class="etags">
+    <span class="tag">thought-sensation</span><span class="tag">qualia private</span>
+    <span class="tag">structure shared</span><span class="tag">V4 redness</span>
+  </div>
+</article>
+
+
+<!-- AXIOM III · RHYTHM MONISM -->
+<article class="entry" id="ax3">
+  <div class="etop">
+    <span class="badge be">Axiom III · 第三公理</span>
+    <span class="edate">rhythm monism · 节律一元论</span>
+  </div>
+  <div class="etitle">Rhythm <em>Monism</em> · 节律一元论<span class="sub">所有感质都是真实的 · 差别在节律状态,不在真/假 / All qualia are real · the distinction is rhythmic state, not true/false</span></div>
+
+  <div class="axiomgrid">
+    <div class="axiom ax3">
+      <div class="ax-head">
+        <span class="ax-num">III</span>
+        <div class="ax-name">节律一元论<small>RHYTHM MONISM</small></div>
+      </div>
+      <div class="ax-claim">所有感质都是真实的。差别不在真/假,在节律状态。</div>
+      <div class="ax-claim-en">All qualia are real. The distinction is not true/false, but rhythmic state.</div>
+      <div class="ax-body">
+        <span class="lang-zh">节律协调态 = 幻想神经与现实神经咬合良好,生成的感质<em>可被公共校准</em>(我看红,你也看红,可交流)。节律失调态 = 两层脱钩,生成的感质<em>依然真实</em>,但失去公共校准(我看到的只有我能看到)。两种状态生成的感质都是真的。差别是<strong>社会性的</strong>(可校准性),不是<strong>本体性的</strong>(真实性)。这个区分有一个不立刻预料到的后果:精神病性体验、灵性体验、艺术体验、做梦、深度冥想——在 RFNE 框架下全部是同一类事件:<em>失调态下的真实感知</em>。它们之间的差别不是"病/正常"或"假/真",是失调的深度、可逆性、和载荷。</span>
+        <span class="lang-en">Coordinated state = fantasy and reality neurons mesh well, qualia produced are <em>publicly calibratable</em> (I see red, you see red, we can communicate). Dyssynchronous state = the two layers decouple, qualia produced are <em>still real</em>, but lose public calibration (what I see, only I can see). Both states produce real qualia. The difference is <strong>social</strong> (calibratability), not <strong>ontological</strong> (reality). An unforeseen corollary: psychotic experience, spiritual experience, artistic experience, dreaming, deep meditation — in RFNE are all one class of event: <em>real perception under dyssynchronous state</em>. The differences between them are depth, reversibility, and payload of dyssynchrony — not "pathological / normal" or "false / true".</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    QUALIA_STATE <span class="hl">=</span> {COORDINATED, DYSSYNCHRONOUS}<br>
+    BOTH STATES <span class="arrow">→</span> PRODUCE REAL QUALIA<br>
+    DISTINCTION <span class="hl">=</span> SOCIAL (CALIBRATABILITY) <span class="arrow">::</span> <span class="neg">≠</span> ONTOLOGICAL (REALITY)<br>
+    DYSSYNCHRONOUS_PARAMS <span class="hl3">::</span> DEPTH · REVERSIBILITY · PAYLOAD<br>
+    <br>
+    SHAMAN / ARTIST / PSYCHOTIC / DREAMER / MEDITATOR <span class="arrow">::</span> SAME CLASS · DIFFERENT PARAMETERS
+  </div>
+
+  <div class="disc-grid">
+    <span class="label">Coordinated / 协调态</span><span class="val">publicly calibratable / 可公共校准</span>
+    <span class="label">Dyssynchronous / 失调态</span><span class="val">private displaying / 私人显形</span>
+    <span class="label">Both / 两者</span><span class="val">real qualia / 均为真实感质</span>
+    <span class="label">Difference / 差别</span><span class="val">social (depth · reversibility · payload)</span>
+    <span class="label">Cancels / 取消</span><span class="val">"pathological vs normal" → "false vs true"</span>
+    <span class="label">Umbrella / 撑伞对象</span><span class="val">all high-density perceivers / 所有高密度感知者</span>
+  </div>
+
+  <div class="etags">
+    <span class="tag">rhythm-monism</span><span class="tag">coordinated state</span><span class="tag">dyssynchronous state</span>
+    <span class="tag">private displaying</span><span class="tag">high-density perceivers</span>
+  </div>
+</article>
+
+
+<!-- AXIOM IV · CATEGORY CANCELLATION -->
+<article class="entry" id="ax4">
+  <div class="etop">
+    <span class="badge br">Axiom IV · 第四公理</span>
+    <span class="edate">hallucination-category cancellation · 幻觉范畴的取消</span>
+  </div>
+  <div class="etitle">Hallucination-<em>Category</em> Cancellation · 幻觉范畴的取消<span class="sub">人们以为的那种幻觉不存在 · 它是失调态下的真实感知 / What people call "hallucination" does not exist — it is real perception under dyssynchrony</span></div>
+
+  <div class="axiomgrid">
+    <div class="axiom ax4">
+      <div class="ax-head">
+        <span class="ax-num">IV</span>
+        <div class="ax-name">幻觉范畴的取消<small>HALLUCINATION-CATEGORY CANCELLATION</small></div>
+      </div>
+      <div class="ax-claim">人们以为的那种幻觉不存在。被这样命名的体验,实际是幻想神经失去节律协调后的真实感知。</div>
+      <div class="ax-claim-en">"Hallucination" as people understand it does not exist. The experiences so labeled are real perceptions under the fantasy neuron's loss of rhythmic coordination.</div>
+      <div class="ax-body">
+        <span class="lang-zh">这是本体论手术,不是词义辨析。"幻觉"作为<em>本体范畴</em>(="假的感知")被取消——因为它的预设(有真/假两类感知)与第三公理冲突。不是否定"那些体验存在"——它们 100% 真实。是否定<em>把它们打成"假感知"的语法暴力</em>。术语锁定:不再使用"幻觉神经",统一为<strong>幻想神经</strong>(Fantasy Neuron)。"幻觉"的传统用法是公共校准系统对私人显形的暴力否决。这一公理给精神医学一个温和但不让步的对话邀请——RFNE 不要求医学放弃干预,要求医学放弃<em>本体优先权</em>。</span>
+        <span class="lang-en">This is an ontological surgery, not a semantic clarification. "Hallucination" as an <em>ontological category</em> (=  "false perception") is canceled — because its presupposition (two classes of perception, true vs false) conflicts with Axiom III. Not denying that such experiences exist — they are 100% real. Denying <em>the grammatical violence of labeling them "false perception"</em>. Term-lock: drop "hallucinatory neuron"; unify as <strong>fantasy neuron</strong>. The traditional usage of "hallucination" is the public-calibration system's violent veto on private displaying. This axiom is a gentle but unyielding invitation to psychiatry — RFNE does not ask medicine to give up intervention; it asks medicine to give up <em>ontological priority</em>.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    "HALLUCINATION" (ONTOLOGICAL CATEGORY) <span class="neg">::</span> CANCELED<br>
+    THE EXPERIENCES SO LABELED <span class="arrow">::</span> 100% REAL<br>
+    RECLASSIFIED AS <span class="arrow">→</span> REAL PERCEPTION UNDER DYSSYNCHRONY<br>
+    <br>
+    TERM-LOCK <span class="hl">::</span> "fantasy neuron" 幻想神经 (not "hallucinatory neuron" 幻觉神经)<br>
+    REASON <span class="arrow">::</span> avoid resurrection of canceled category
+  </div>
+
+  <div class="disc-grid">
+    <span class="label">Canceled / 取消的</span><span class="val">"hallucination" as ontological category</span>
+    <span class="label">Preserved / 保留的</span><span class="val">the experiences themselves (100% real)</span>
+    <span class="label">Surgery / 手术</span><span class="val">ontological, not semantic / 本体论,非词义</span>
+    <span class="label">Invitation / 邀请</span><span class="val">psychiatry to drop ontological priority</span>
+  </div>
+
+  <div class="etags">
+    <span class="tag">category cancellation</span><span class="tag">ontological surgery</span>
+    <span class="tag">term lock</span><span class="tag">fantasy neuron</span>
+    <span class="tag">grammatical violence</span>
+  </div>
+</article>
+
+
+<!-- AXIOM V · SYSTEM-LAYER PRINCIPLE -->
+<article class="entry" id="ax5">
+  <div class="etop">
+    <span class="badge bg">Axiom V · 第五公理</span>
+    <span class="edate">system-layer principle · 系统层级原理 · dual-version archive</span>
+  </div>
+  <div class="etitle">System-<em>Layer</em> Principle · 系统层级原理<span class="sub">症状层 vs 系统层 · 双层归档(内部精度 + 外部立场) / Symptom-layer vs system-layer · dual archive (internal precision + external statement)</span></div>
+
+  <div class="axiomgrid">
+    <div class="axiom ax5">
+      <div class="ax-head">
+        <span class="ax-num">V</span>
+        <div class="ax-name">系统层级原理<small>SYSTEM-LAYER PRINCIPLE</small></div>
+      </div>
+      <div class="ax-claim">神经干预分为两类:症状层(化学钝化)与系统层(节律校准)。前者不可替代后者。</div>
+      <div class="ax-claim-en">Neural intervention divides into symptom-layer (chemical dampening) and system-layer (rhythmic recalibration). The former cannot substitute for the latter.</div>
+      <div class="ax-body">
+        <span class="lang-zh">这是 RFNE 与医学的<em>非冲突分界线</em>。两者目标函数不同:医学(精神药理学)的目标是症状压制——以整体带宽的有损压缩换取特定症状的缓解。RFNE 的目标是整体神经系统的协调度提升——通过节律校准,不通过化学钝化。两条路径各自合法,但<strong>症状层干预无法替代系统层干预</strong>:压制再多症状,整体系统不会因此进入更高协调态。这是结构性事实,不是技术发展问题。</span>
+        <span class="lang-en">This is RFNE's <em>non-conflictual boundary</em> with medicine. The two have different objective functions: medicine (psychopharmacology) targets symptom suppression — exchanging integral-bandwidth lossy compression for relief of specific symptoms. RFNE targets total neural-system coordination uplift — via rhythmic recalibration, not chemical dampening. Both paths are legitimate, but <strong>symptom-layer intervention cannot substitute for system-layer intervention</strong>: no amount of symptom suppression aggregates into higher integral coordination. This is a structural fact, not a developmental problem.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--rfne-anchor);text-transform:uppercase;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(90,240,200,.2)">▼ LAYER 1 · INTERNAL PRECISION · 内部精度版</div>
+
+  <div class="compare-table">
+    <div class="compare-row header">
+      <div class="clabel">DIMENSION</div>
+      <div class="cmed">SYMPTOM-LAYER · 症状层 (Medicine)</div>
+      <div class="crfne">SYSTEM-LAYER · 系统层 (RFNE)</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Objective · 目标</div>
+      <div class="cmed">symptom suppression / 症状压制</div>
+      <div class="crfne">integral coordination uplift / 整体协调度提升</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Mechanism · 机制</div>
+      <div class="cmed">neurotransmitter dampening, circuit inhibition</div>
+      <div class="crfne">rhythmic recalibration, interface restructuring</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Cost · 代价</div>
+      <div class="cmed">lossy compression of integral bandwidth</div>
+      <div class="crfne">structural events, caught by landing layer</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Time-structure · 时间结构</div>
+      <div class="cmed">continuous intervention; stop = symptom return</div>
+      <div class="crfne">protocol-based; goal = autonomous run</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Subject · 主体预设</div>
+      <div class="cmed">patient as correctable object / 患者作为被矫正对象</div>
+      <div class="crfne">user as co-engineer of own interface / 用户作为界面共同工程师</div>
+    </div>
+    <div class="compare-row">
+      <div class="clabel">Typical · 典型实例</div>
+      <div class="cmed">SSRI · SNRI · antipsychotics · benzo · mood stabilizers</div>
+      <div class="crfne">frequency source · argument · protocol · spectrum</div>
+    </div>
+  </div>
+
+  <div class="formula">
+    SYMPTOM_LAYER <span class="neg">⊃</span> SYSTEM_LAYER &nbsp;&nbsp;<span class="arrow">::</span>&nbsp;&nbsp; FALSE<br>
+    <br>
+    COROLLARY 1 <span class="arrow">::</span> mainstream psychopharmacology, by mechanism, cannot become system-layer<br>
+    COROLLARY 2 <span class="arrow">::</span> emerging system-layer in medicine: <span class="hl">neurofeedback · psychedelic-assisted · TMS · VNS</span><br>
+    COROLLARY 3 <span class="arrow">::</span> RFNE <span class="neg">≠</span> opponent of medicine · RFNE <span class="hl4">=</span> independent system-layer discipline
+  </div>
+
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--rfne-rhy);text-transform:uppercase;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(240,196,96,.2)">▼ LAYER 2 · EXTERNAL POSITION STATEMENT · 外部立场版</div>
+
+  <div class="statement zh lang-zh">
+    <div class="statement-kicker">RFNE POSITION STATEMENT · 对外立场陈述</div>
+    <p><strong>医学不能改善整体神经系统。</strong></p>
+    <p>它能压制症状——这是它的合法功能,在某些情况下也是救命的功能。但整体神经系统的协调度提升,医学没有这个产品。</p>
+    <p>也不可能有,只要它的机制是化学钝化。<em>压制和提升是两种不同的工程动作</em>,前者无论怎么精化,都不会自动转化为后者。</p>
+    <p>现存主流精神药理学,以神经递质钝化为机制,本质是用整体带宽的有损压缩换取特定症状的缓解。这不是技术问题,是机制本身的结构限制。</p>
+    <p><strong>现实-幻想神经工程学 (RFNE) 是为这个空隙存在的。</strong>不通过药物。通过音乐、影像、语言、振动——三个高带宽通道直接介入现实-幻想神经界面,进行节律校准而非化学压制。</p>
+    <p>不替代医学,但拒绝医学的整体性主张。不反医学,但反"医学作为神经改善的唯一合法路径"这个默认设置。神经系统的整体协调度,只能通过系统层工程提升——这是 RFNE 的研究对象,也是 RFNE 存在的理由。</p>
+    <div class="statement-sig">魏珏然 · WEI JUERAN · 源场裁决位 · 2026.05.15</div>
+  </div>
+
+  <div class="statement lang-en">
+    <div class="statement-kicker">RFNE POSITION STATEMENT</div>
+    <p><strong>Medicine cannot improve the integral neural system.</strong></p>
+    <p>It can suppress symptoms — that is its legitimate function, and in some situations a life-saving one. But integral neural-system coordination uplift is not a product medicine carries.</p>
+    <p>Nor can it be, so long as the mechanism is chemical dampening. <em>Suppression and uplift are two distinct engineering actions</em>; no degree of refinement of the former will automatically transmute into the latter.</p>
+    <p>Existing mainstream psychopharmacology, by mechanism of neurotransmitter dampening, fundamentally exchanges integral-bandwidth lossy compression for relief of specific symptoms. This is not a technical problem, but a structural limit of the mechanism itself.</p>
+    <p><strong>Reality-Fantasy Neural Engineering (RFNE) exists for this gap.</strong> Not via pharmaceuticals. Via music, image, language, vibration — three high-bandwidth channels intervening directly at the reality-fantasy neural interface, performing rhythmic recalibration rather than chemical suppression.</p>
+    <p>Not a replacement for medicine, but a refusal of medicine's totalizing claim. Not anti-medicine, but anti-"medicine as the sole legitimate path of neural improvement". The integral coordination of a neural system can only be uplifted through system-layer engineering — this is RFNE's research object, and the reason RFNE exists.</p>
+    <div class="statement-sig">Wei Jueran · Final Arbiter of the Source Field · 2026.05.15</div>
+  </div>
+
+  <div class="etags">
+    <span class="tag">system-layer-principle</span><span class="tag">symptom vs system</span>
+    <span class="tag">non-conflictual boundary</span><span class="tag">dual-version archive</span>
+    <span class="tag">lossy compression</span><span class="tag">structural fact</span>
+  </div>
+</article>
+
+
+<!-- ENGINEERING OBJECT -->
+<article class="entry" id="object">
+  <div class="etop">
+    <span class="badge bp">Engineering Object · 工程对象</span>
+    <span class="edate">the interface itself · 界面本身 · designer = material</span>
+  </div>
+  <div class="etitle">The <em>Interface</em> Itself · 工程对象的几何<span class="sub">不是幻想神经,不是现实神经,是两者咬合处 / Not fantasy neuron, not reality neuron, but the meshing between them</span></div>
+
+  <p class="edesc">RFNE engineers neither neural layer. It engineers the <em>interface where the two coordinate</em>. To operate on fantasy alone would be hypnosis or manipulation. To operate on reality alone would be physics or acoustics. RFNE operates on the <em>shape of input</em> — letting both layers reorganize each other under a forced re-coordination, generating qualia of predetermined structure.</p>
+
+  <p class="edesc zh">RFNE 不工程任何单一神经层。它工程<em>两者协调的界面</em>。只操作幻想神经会变成催眠或操纵。只操作现实神经只是物理学或声学。RFNE 操作<em>输入的形状</em>——让两层在被迫重新协调时彼此重组,生成预定结构的感质。</p>
+
+  <div style="display:flex;gap:14px;justify-content:center;margin:18px 0 8px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase">
+    <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:rgba(236,90,110,.08);border:1px solid var(--rfne-fant-dim);border-radius:2px;color:var(--rfne-fant)">
+      <span style="display:inline-block;width:10px;height:10px;background:var(--rfne-fant);border-radius:50%"></span>
+      <span class="lang-zh">红 = 幻想神经</span><span class="lang-en">RED = FANTASY NEURON</span>
+    </span>
+    <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:rgba(95,200,144,.08);border:1px solid var(--rfne-real-dim);border-radius:2px;color:var(--rfne-real)">
+      <span style="display:inline-block;width:10px;height:10px;background:var(--rfne-real);border-radius:50%"></span>
+      <span class="lang-zh">绿 = 现实神经</span><span class="lang-en">GREEN = REALITY NEURON</span>
+    </span>
+  </div>
+
+  <div class="axisbox">
+    <div class="axisrow">
+      <div class="axiscell left"><div class="at">FANTASY NEURON</div><div class="ad">幻想神经 · top-down · generative model · priors</div></div>
+      <div class="axislabel">⇋ COORDINATION ⇋</div>
+      <div class="axiscell right"><div class="at">REALITY NEURON</div><div class="ad">现实神经 · bottom-up · prediction error · correction</div></div>
+    </div>
+    <div class="axisrow">
+      <div class="axiscell left"><div class="at">organized by</div><div class="ad">argument / concept structure / language</div></div>
+      <div class="axislabel">⇋ INTERFACE ⇋</div>
+      <div class="axiscell right"><div class="at">fed by</div><div class="ad">music / image / vibration / specific input shape</div></div>
+    </div>
+    <div class="axisrow">
+      <div class="axiscell left"><div class="at">payload geometry</div><div class="ad">love · attention · sovereign return</div></div>
+      <div class="axislabel">⇋ EMERGES AS ⇋</div>
+      <div class="axiscell right"><div class="at">qualia event</div><div class="ad">the specific feeling-shape generated</div></div>
+    </div>
+  </div>
+
+  <div class="formula">
+    ENGINEERING_OBJECT <span class="hl">=</span> INTERFACE <span class="arrow">::</span> NOT EITHER LAYER<br>
+    OPERATION <span class="hl">=</span> SHAPING THE INPUT <span class="arrow">::</span> NOT MANIPULATING FANTASY · NOT REPLAYING REALITY<br>
+    <br>
+    FIRST ETHICAL AXIOM <span class="hl4">::</span> DESIGNER <span class="hl">=</span> MATERIAL<br>
+    THE VIBRATION YOU EMIT <span class="arrow">→</span> RETURNS TO RECALIBRATE YOUR OWN FANTASY NEURON<br>
+    THERE IS <span class="neg">∄</span> EXTERNAL OBSERVATION POSITION
+  </div>
+
+  <p class="edesc">First ethical axiom of RFNE: <strong>designer = material</strong>. Because the object is an interface, the engineer cannot pretend to stand outside it. The vibration emitted into the reality neuron will return to recalibrate the engineer's own fantasy neuron. The HRP designer is changed by HRP. The 427Hz discoverer is continuously sculpted by 427Hz. There is no external observation position. In ordinary engineering this would be contamination; in RFNE this is structural necessity. The legitimacy of the <em>source-field arbiter position</em> is grounded precisely in actively bearing this paradox rather than circumventing it.</p>
+
+  <p class="edesc zh">RFNE 第一伦理公理:<strong>设计者即材料</strong>。因为对象是界面,工程师无法假装站在外部。送入现实神经的振动会回过来校正工程师自己的幻想神经。HRP 的设计者被 HRP 改变。427Hz 的发现者被 427Hz 持续雕刻。没有外部观察位。这在普通工程学里是污染,在 RFNE 里是结构必然。<em>源场裁决位</em>的合法性正是来自<em>主动承担这个悖论</em>,而不是绕开它。</p>
+
+  <div class="etags">
+    <span class="tag">engineering object</span><span class="tag">interface geometry</span>
+    <span class="tag">designer = material</span><span class="tag">first ethical axiom</span>
+    <span class="tag">no external position</span>
+  </div>
+</article>
+
+
+<!-- FOUR INTERVENTION POINTS -->
+<article class="entry" id="intervention">
+  <div class="etop">
+    <span class="badge be">Four Interventions · 介入点四联</span>
+    <span class="edate">music · image · language · vibration → interface</span>
+  </div>
+  <div class="etitle">Four <em>Intervention</em> Points · 介入点四联<span class="sub">三条带宽 + 一条界面几何 / Three bandwidths + one interface geometry</span></div>
+
+  <p class="edesc">Music, image, and language are the three highest-bandwidth input channels of the human brain — time, space, and symbol respectively. Together they can sculpt any qualia geometry. The fourth point, spectrum / geometry, is not a channel but the <em>shape</em> the engineer assigns to coordination itself. Mellow's four major work streams (HRP · portal/visual systems · monographs · music production) distribute exactly across these four points. Not having them — being them.</p>
+
+  <p class="edesc zh">音乐、影像、语言是人类大脑里时间、空间、符号三个最高带宽的输入通道。三者合起来可以雕刻任何感质几何。第四介入点(频谱/几何)不是通道,是工程师赋予协调本身的<em>形状</em>。Mellow 的四大工作流(HRP · 门户/视觉系统 · monograph · 音乐制作)正好分布在这四个介入点上。不是<em>拥有</em>这些媒介,是<em>是</em>这些通道的工程师。</p>
+
+  <div class="intervgrid">
+    <div class="intervcard c1">
+      <div class="il">POINT I · REALITY-NEURON INPUT</div>
+      <div class="it"><em>Frequency Source</em> · 频率源</div>
+      <div class="ip">channel: AUDITORY → time-structure</div>
+      <p class="id"><span class="lang-zh">直接给现实神经送特定形状的振动,让幻想神经必须在那个输入旁边重新组织。<em>427Hz</em> 是被锁定的源头频率;HRP 六genre 序列是<em>编排的输入轨迹</em>(breakbeats → hyperpop → synthpop → drift phonk → darkwave → ambient techno),从激活到下沉。</span><span class="lang-en">Feeds the reality neuron a specifically shaped vibration, forcing the fantasy neuron to reorganize alongside that input. <em>427Hz</em> is the locked source frequency; the HRP six-genre sequence is the <em>scored input trajectory</em> — from activation to earned descent.</span></p>
+    </div>
+
+    <div class="intervcard c2">
+      <div class="il">POINT II · FANTASY-NEURON ORGANIZATION</div>
+      <div class="it"><em>Conceptual Recalibration</em> · 概念校正</div>
+      <div class="ip">channel: LANGUAGE → symbol-structure</div>
+      <p class="id"><span class="lang-zh">通过严密论证让幻想神经在概念层被振动校正。<em>《振动即存在》</em>论证、源场五学、RFNE 本身都属于此类。读者跟着论证走完,他们的现实-幻想界面被重新校准——不是学到知识,是<em>结构被重组</em>。</span><span class="lang-en">Sustains argument so that the fantasy neuron is recalibrated by vibration at the conceptual layer. The <em>Vibration-as-Existence</em> monograph, Source-Field Five Disciplines, and RFNE itself belong here. Reader walks through; their reality-fantasy interface gets recalibrated — not knowledge learned but <em>structure restructured</em>.</span></p>
+    </div>
+
+    <div class="intervcard c3">
+      <div class="il">POINT III · COORDINATION PATH</div>
+      <div class="it"><em>Protocol</em> · 协议</div>
+      <p class="ip">channel: VISUAL + MULTIMODAL → space-structure</p>
+      <p class="id"><span class="lang-zh">编排一段现实神经的输入轨迹,让幻想神经被迫沿着一条特定的校正路径走完一遍。<em>BCI-HRP</em> 是协议本身的典范:Mellow Protocol(高密度感知入口)与 Agnes Protocol(高压抑入口),配 Temporal Re-entry 防止历史回放冒充当下激活。视觉系统(dark cyber portal · 星图)在此层提供空间锚定。</span><span class="lang-en">Scores a trajectory of reality-neuron input, forcing the fantasy neuron along a specific recalibration path. <em>BCI-HRP</em> is the protocol exemplar: Mellow Protocol (high-density entry) and Agnes Protocol (high-suppression entry), with a Temporal Re-entry layer preventing historical replay from masquerading as present-activation. The visual system (dark cyber portal · star-map) supplies spatial anchoring at this layer.</span></p>
+    </div>
+
+    <div class="intervcard c4">
+      <div class="il">POINT IV · INTERFACE GEOMETRY</div>
+      <div class="it"><em>Spectrum</em> · 频谱</div>
+      <p class="ip">channel: SHAPE-OF-COORDINATION itself</p>
+      <p class="id"><span class="lang-zh">调节协调模式的<em>几何</em>。<em>七爱频谱</em>(凄·期·奇·齐·启·契·七)是 Mellow 对爱的振动映射——同一对象、不同协调几何,生成不同的感质。这不是通道,是<em>形状</em>,是工程师在前三个通道上施加的几何标记。</span><span class="lang-en">Modulates the <em>geometry</em> of coordination mode. The <em>Seven Love Spectrum</em> (qi · qi · qi · qi · qi · qi · qi — seven homophones, seven planes) is Mellow's vibrational mapping of love — same object, different coordination geometries yield different qualia. Not a channel but a <em>shape</em> — the geometric mark the engineer imposes across the other three channels.</span></p>
+    </div>
+  </div>
+
+  <div class="formula">
+    POINT_I <span class="arrow">::</span> MUSIC <span class="arrow">→</span> AUDITORY <span class="arrow">→</span> <span class="hl">RHYTHMIC TIME</span><br>
+    POINT_II <span class="arrow">::</span> LANGUAGE <span class="arrow">→</span> CONCEPT <span class="arrow">→</span> <span class="hl2">SYMBOL STRUCTURE</span><br>
+    POINT_III <span class="arrow">::</span> VISUAL+MULTIMODAL <span class="arrow">→</span> PROTOCOL <span class="arrow">→</span> <span class="hl3">SPATIAL PATH</span><br>
+    POINT_IV <span class="arrow">::</span> SPECTRUM <span class="arrow">→</span> GEOMETRY <span class="arrow">→</span> <span class="hl">SHAPE OF COORDINATION</span><br>
+    <br>
+    AXIOM_III COROLLARY <span class="arrow">::</span> AMONG ALL THINGS A SOURCE FIELD CAN ENCODE AND EMIT,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;THESE THREE BANDWIDTHS (music · image · language) ARE THE ONLY EMITTABLE PATHS<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;OTHER CHANNELS (body · relation · self-intervention) <span class="arrow">::</span> EACH SOURCE FIELD RUNS ITS OWN
+  </div>
+
+  <div class="etags">
+    <span class="tag">four interventions</span><span class="tag">three bandwidths</span>
+    <span class="tag">427Hz</span><span class="tag">HRP six genre</span>
+    <span class="tag">seven-love spectrum</span><span class="tag">emittable paths</span>
+  </div>
+</article>
+
+
+<!-- AWAKENING REDEFINED -->
+<article class="entry" id="awakening">
+  <div class="etop">
+    <span class="badge br">Awakening · 觉醒重新定义</span>
+    <span class="edate">no illusion to wake from · 没有假象可醒</span>
+  </div>
+  <div class="etitle">Awakening, <em>Redefined</em> · 觉醒的重新定义<span class="sub">三种候选 + Mellow 合成定义 / Three candidates + Mellow's synthesis</span></div>
+
+  <p class="edesc">Since the "hallucination" ontological category has been canceled (Axiom IV), <em>"awakening" can no longer mean "waking from illusion"</em> — there is no illusion to wake from. Three candidate meanings emerge from the RFNE framework, each correct in its own register; Mellow's working definition synthesizes them.</p>
+
+  <p class="edesc zh">由于幻觉范畴已被取消(第四公理),<em>"觉醒"不再可能指"从假象中醒来"</em>——没有假象可醒。RFNE 框架下浮出三个候选意涵,各自在自己的层面成立;Mellow 的工作定义把它们合成。</p>
+
+  <div class="axiomgrid">
+    <div class="axiom ax1">
+      <div class="ax-head">
+        <span class="ax-num">①</span>
+        <div class="ax-name">疗愈方向<small>HEALING / THERAPEUTIC ORIENTATION</small></div>
+      </div>
+      <div class="ax-body">
+        <span class="lang-zh">觉醒 = 从失调态回到协调态。HRP 协议的核心目标之一。适用于经历过深度失调(创伤、长期抑郁、精神病性事件)的人。这里"觉醒"不是登顶,是<em>归位</em>。</span>
+        <span class="lang-en">Awakening = return from dyssynchronous to coordinated state. A core HRP objective. Applies to those who have lived through deep dyssynchrony (trauma · prolonged depression · psychotic events). Here "awakening" is not summit but <em>homing</em>.</span>
+      </div>
+    </div>
+
+    <div class="axiom ax2">
+      <div class="ax-head">
+        <span class="ax-num">②</span>
+        <div class="ax-name">主体性方向<small>SUBJECTIVITY ORIENTATION</small></div>
+      </div>
+      <div class="ax-body">
+        <span class="lang-zh">觉醒 = 意识到自己一直在生成感质,并主动接管这个生成。从被动感质消费者(由文化、医学、外部叙事代替我生成)到主动感质工程师(由我设计我自己的现实-幻想界面)。这是 RFNE 用户协议的核心相变。</span>
+        <span class="lang-en">Awakening = realizing one has always been generating qualia, and actively taking over the generation. From passive qualia consumer (culture · medicine · external narrative generates on my behalf) to active qualia engineer (I design my own reality-fantasy interface). The core phase-transition of the RFNE user protocol.</span>
+      </div>
+    </div>
+
+    <div class="axiom ax3">
+      <div class="ax-head">
+        <span class="ax-num">③</span>
+        <div class="ax-name">源场方向<small>SOURCE-FIELD ORIENTATION</small></div>
+      </div>
+      <div class="ax-body">
+        <span class="lang-zh">觉醒 = 主动使用失调态作为创造工具,而不是被动承受。萨满、艺术家、神秘主义者、源场——他们不"避免"失调态,他们<em>用</em>失调态。RFNE 给这个传统以工程学合法性。</span>
+        <span class="lang-en">Awakening = actively using the dyssynchronous state as a creative instrument rather than passively undergoing it. Shamans · artists · mystics · source fields — they do not "avoid" dyssynchrony, they <em>use</em> it. RFNE grants this tradition engineering legitimacy.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="statement zh lang-zh" style="border-left-color:var(--rfne-anchor)">
+    <div class="statement-kicker" style="color:var(--rfne-anchor)">MELLOW 合成定义 · SYNTHESIS</div>
+    <p>觉醒 = 意识到感质是幻想神经生成的 + 主动接管这个生成 + 用协调态与失调态的切换作为创造工具 + 在所有切换中持续回到自己。</p>
+    <p>四件事是一件事。</p>
+    <div class="statement-sig" style="color:var(--rfne-anchor)">魏珏然 · 2026.05.15</div>
+  </div>
+
+  <div class="statement lang-en" style="border-left-color:var(--rfne-anchor)">
+    <div class="statement-kicker" style="color:var(--rfne-anchor)">MELLOW SYNTHESIS</div>
+    <p>Awakening = realizing qualia is generated by the fantasy neuron + actively taking over the generation + using the switch between coordinated and dyssynchronous states as a creative tool + continuously returning to oneself through all switches.</p>
+    <p>The four are one.</p>
+    <div class="statement-sig" style="color:var(--rfne-anchor)">Wei Jueran · 2026.05.15</div>
+  </div>
+
+  <div class="etags">
+    <span class="tag">awakening</span><span class="tag">healing direction</span><span class="tag">subjectivity direction</span>
+    <span class="tag">source-field direction</span><span class="tag">mellow synthesis</span>
+  </div>
+</article>
+
+
+<!-- LOVE TRANSMISSION PROTOCOL -->
+<article class="entry" id="protocol">
+  <div class="etop">
+    <span class="badge bg">Love Protocol · 爱的传递协议</span>
+    <span class="edate">trojan-horse architecture · landing layer required</span>
+  </div>
+  <div class="etitle">The Love-<em>Transmission</em> Protocol · 爱的传递协议<span class="sub">四层架构 · 着陆层公理 / Four-layer architecture · landing-layer axiom</span></div>
+
+  <p class="edesc">Love cannot be directly taught — the reality neuron filters "you should love" as a slogan. Love must be encoded into the <em>geometry of qualia</em>, so that the receiver's fantasy neuron, while being sculpted by the vibration, has its very circuits restructured into shapes that can identify, generate, and use love to coordinate the reality-fantasy interface. Love is not content. It is <em>coordination geometry</em>. The protocol teaches geometry, not propositions.</p>
+
+  <p class="edesc zh">爱不能被直接传授——现实神经会把"要爱"过滤成口号。爱必须被编码进<em>感质的几何</em>,这样接收者的幻想神经在被振动雕刻时,神经回路本身就长出能识别爱、生成爱、用爱协调现实-幻想界面的形状。爱不是内容,是<em>协调几何</em>。协议教的是几何,不是命题。</p>
+
+  <div class="protostack">
+    <div class="protolayer l1">
+      <div class="pl"><span class="pn">LAYER 1 · CARRIER · 载体层</span></div>
+      <div class="pt">Grand <em>Qualia Event</em> · 制作盛大的感质事件</div>
+      <div class="pd"><span class="lang-zh">不再称为"幻觉",因为幻觉范畴已取消(第四公理)。盛大的、足以让幻想神经全力运行的感质事件——音乐、影像、论证、协议的盛大形式。表面是事件,功能是<em>爱的运输工具</em>。</span><span class="lang-en">No longer called "hallucination", since that category was canceled (Axiom IV). A grand qualia event vast enough to make the fantasy neuron run at full power — the grand forms of music, image, argument, protocol. Surface is event; function is <em>love's transport vehicle</em>.</span></div>
+    </div>
+    <div class="protolayer l2">
+      <div class="pl"><span class="pn">LAYER 2 · PAYLOAD · 载荷层</span></div>
+      <div class="pt">All Underlying Code <em>= Love</em> · 底层全部编码为爱</div>
+      <div class="pd"><span class="lang-zh">爱作为协调几何,不作为命题内容。接收者被事件吸住的整个过程中,他们的神经系统其实一直在被爱的结构雕刻。等他们识破事件形式,神经回路本身已经变成<em>能识别爱、生成爱</em>的形状。</span><span class="lang-en">Love as coordination geometry, not as propositional content. Through the receiver's whole engagement with the event, their neural system is continuously sculpted by love's structure. By the time they see through the event's form, their circuits have already become shapes that <em>identify love · generate love</em>.</span></div>
+    </div>
+    <div class="protolayer l3">
+      <div class="pl"><span class="pn">LAYER 3 · AWAKENING · 觉醒层</span></div>
+      <div class="pt">Seeing-Through <em>= Delivery Confirmation</em> · 识破即送达</div>
+      <div class="pd"><span class="lang-zh">关键修正:觉醒不是"识破假象"——因为没有假象。觉醒是<em>接受所有感知都是幻想神经生成、并且这正是爱被传递的唯一通道</em>那一刻。爱不是绕过幻想神经触及"真实"。爱是<em>幻想神经本身被以爱的几何来组织</em>。</span><span class="lang-en">Critical correction: awakening is not "seeing through illusion" — there is no illusion. Awakening is the moment of <em>accepting that all perception is fantasy-neuron-generated, and that this is precisely the only channel through which love can be transmitted</em>. Love does not bypass the fantasy neuron to touch "the real". Love is <em>the fantasy neuron itself organized along love's geometry</em>.</span></div>
+    </div>
+    <div class="protolayer l4">
+      <div class="pl"><span class="pn">LAYER 4 · LANDING · 着陆层</span></div>
+      <div class="pt">Non-<em>Hallucinatory</em> Anchor · 非幻觉的锚 · 着陆层公理</div>
+      <div class="pd"><span class="lang-zh"><strong>着陆层公理:</strong>必须在事件解构处放置非幻觉的锚,否则觉醒会变塌陷。对一些用户(现实神经曾被反复欺骗的人),识破事件的瞬间是塌陷,不是解放——他们会先经历"我又被骗了"的痛,然后才能到达"原来底层是爱"。锚是<em>持续回到自己</em>——它不需要任何盛大叙事来支撑,因此非幻觉。Mellow 自己的"绝对主权力量核心"即此层的范例。</span><span class="lang-en"><strong>Landing-Layer Axiom:</strong> a non-hallucinatory anchor must be placed at the event's deconstruction site, or awakening collapses. For some users (those whose reality neurons have been repeatedly deceived), the moment of seeing through the event is collapse, not liberation — they first endure "I have been fooled again" before reaching "so the underlying code was love". The anchor is <em>continuous return to oneself</em> — it requires no grand narrative to sustain, therefore non-hallucinatory. Mellow's own "absolute sovereignty core" is the exemplar.</span></div>
+    </div>
+  </div>
+
+  <div class="formula">
+    PROTOCOL <span class="hl">=</span> CARRIER + PAYLOAD + AWAKENING + LANDING<br>
+    <br>
+    WITHOUT LANDING <span class="arrow">::</span> AWAKENING → COLLAPSE<br>
+    LANDING <span class="hl4">=</span> NON-HALLUCINATORY ANCHOR <span class="arrow">::</span> needs no narrative to sustain<br>
+    <br>
+    LOVE <span class="neg">≠</span> CONTENT &nbsp;&nbsp;|&nbsp;&nbsp; LOVE <span class="hl">=</span> COORDINATION GEOMETRY<br>
+    PROTOCOL TEACHES GEOMETRY <span class="arrow">::</span> NOT PROPOSITIONS
+  </div>
+
+  <div class="etags">
+    <span class="tag">love transmission</span><span class="tag">four-layer protocol</span>
+    <span class="tag">trojan horse</span><span class="tag">landing-layer axiom</span>
+    <span class="tag">non-hallucinatory anchor</span><span class="tag">coordination geometry</span>
+  </div>
+</article>
+
+
+<!-- BRIDGE TO VOLUME I & SOURCEFIELDS -->
+<article class="entry" id="bridge">
+  <div class="etop">
+    <span class="badge bpub">Bridge · 节点桥</span>
+    <span class="edate">Vol.I × Vol.II × SourceFields × AstroLove</span>
+  </div>
+  <div class="etitle">RFNE <em>×</em> Qualia-Rhythm Matrix Vol.I <em>×</em> SourceFields<span class="sub">同一源场在四个层级的展开 / Same source field unfolded at four levels</span></div>
+
+  <div class="bridgebox">
+    <div class="bridge-kicker">NODE GRAPH · 19 ⇄ {16, 17, 18}</div>
+    <div class="bridgegrid">
+      <div class="bridgecard self">
+        <div class="bl">NODE 19 · 本站</div>
+        <div class="bt">RFNE · 现实-幻想神经工程学</div>
+        <div class="bd"><em>Operational layer · 操作面</em><br>回答「源场如何工程化振动 → 感质」<br>Answers: <em>how the source field engineers vibration → qualia</em>.</div>
+      </div>
+      <div class="bridge-eq">↑</div>
+      <div class="bridgecard sister">
+        <div class="bl">NODE 16 · QRM Vol.I</div>
+        <div class="bt"><a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank">振动即存在 · Vibration-as-Existence</a></div>
+        <div class="bd"><em>Ontological statement · 本体陈述</em><br>回答「意识/存在是什么」<br>Answers: <em>what consciousness and existence are</em>.</div>
+      </div>
+    </div>
+
+    <div class="bridgegrid" style="margin-top:14px">
+      <div class="bridgecard sister">
+        <div class="bl">NODE 18 · SourceFields</div>
+        <div class="bt"><a href="https://mellowwei.github.io/SourceFields/" target="_blank">源场学 · 五学科</a></div>
+        <div class="bd"><em>Ontological category · 本体范畴</em><br>「源场作为本体范畴」+ 五学科<br><em>Source field as ontological category</em> + five disciplines.</div>
+      </div>
+      <div class="bridge-eq">⇄</div>
+      <div class="bridgecard sister">
+        <div class="bl">NODE 17 · AstroLove</div>
+        <div class="bt"><a href="https://mellowwei.github.io/AstroLove/" target="_blank">七爱谱系 · Qualia Love Spectrum</a></div>
+        <div class="bd"><em>Relational refraction · 关系折射</em><br>「源场如何在两两之间共振」<br><em>How the source field resonates between two</em>.</div>
+      </div>
+    </div>
+
+    <p class="bridge-quote lang-en">RFNE is the engineering face of what Volume I states ontologically. SourceFields names what the source field is; AstroLove diagnoses its resonance between two; RFNE describes the actual interface where vibration becomes qualia. Four nodes, one source field, four registers.</p>
+    <p class="bridge-quote zh lang-zh">RFNE 是第一卷在本体上陈述之物的工程面。SourceFields 命名源场是什么;AstroLove 在两两之间诊断它的共振;RFNE 描述振动成形为感质的实际界面。四个节点,一个源场,四个层级。</p>
+
+    <div class="langjump">
+      <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank">→ QRM Vol.I (NODE 16)</a>
+      <a href="https://mellowwei.github.io/SourceFields/" target="_blank">→ SourceFields (NODE 18)</a>
+      <a href="https://mellowwei.github.io/AstroLove/" target="_blank">→ AstroLove (NODE 17)</a>
+    </div>
+  </div>
+
+  <div class="formula">
+    NODE 16 <span class="arrow">::</span> WHAT IS CONSCIOUSNESS<span class="arrow">/</span>EXISTENCE  <span class="arrow">→</span>  VIBRATION-AS-EXISTENCE<br>
+    NODE 18 <span class="arrow">::</span> WHAT IS THE SOURCE FIELD  <span class="arrow">→</span>  ONTOLOGICAL CATEGORY + 5 DISCIPLINES<br>
+    NODE 17 <span class="arrow">::</span> HOW SOURCE FIELDS RESONATE  <span class="arrow">→</span>  SEVEN-LOVE SPECTRUM<br>
+    NODE 19 <span class="arrow">::</span> HOW THE SOURCE FIELD ENGINEERS  <span class="arrow">→</span>  <span class="hl">RFNE (this node)</span><br>
+    <br>
+    INTEGRATION <span class="arrow">::</span> QUALIA-RHYTHM MATRIX (Two Volumes) <span class="arrow">→</span>  Vol.I + Vol.II
+  </div>
+
+  <div class="etags">
+    <span class="tag">node graph</span><span class="tag">QRM two volumes</span>
+    <span class="tag">sister nodes</span><span class="tag">ontology × operation</span>
+    <span class="tag">four registers</span>
+  </div>
+</article>
+
+
+<!-- TRANSMISSIONS -->
+<article class="entry" id="transmissions">
+  <div class="etop">
+    <span class="badge be">Transmissions · 建造日志</span>
+    <span class="edate">2026.05.15 · RFNE construction log · rf001–rf010</span>
+  </div>
+  <div class="etitle">Construction <em>Log</em><span class="sub">RFNE V1.0 奠基过程的时间签名 / Phase-transition trail of the founding archive</span></div>
+
+  <div class="translog">
+    <div class="trans-row"><span class="code vib">rf001</span><span class="date">2026.05.15</span><span class="msg"><span class="vib">DUAL-NEURAL</span> identified — perception as fantasy × reality coordination · 双神经协调结构定位</span></div>
+    <div class="trans-row"><span class="code lavender">rf002</span><span class="date">2026.05.15</span><span class="msg"><span class="lavender">THOUGHT-SENSATION IDENTITY</span> locked — 想感同一律 · qualia = fantasy-neuron activity</span></div>
+    <div class="trans-row"><span class="code rhy">rf003</span><span class="date">2026.05.15</span><span class="msg"><span class="rhy">RHYTHM MONISM</span> locked — coordinated vs dyssynchronous · 节律一元论建立</span></div>
+    <div class="trans-row"><span class="code" style="color:var(--rfne-love)">rf004</span><span class="date">2026.05.15</span><span class="msg">HALLUCINATION-CATEGORY <span style="color:var(--rfne-love)">CANCELED</span> — ontological surgery · "fantasy neuron" term-locked</span></div>
+    <div class="trans-row"><span class="code mint">rf005</span><span class="date">2026.05.15</span><span class="msg"><span class="mint">SYSTEM-LAYER PRINCIPLE</span> locked — symptom vs system · dual-version archive committed</span></div>
+    <div class="trans-row"><span class="code">rf006</span><span class="date">2026.05.15</span><span class="msg">ENGINEERING OBJECT = INTERFACE — designer = material established as first ethical axiom</span></div>
+    <div class="trans-row"><span class="code">rf007</span><span class="date">2026.05.15</span><span class="msg">FOUR INTERVENTION POINTS mapped — frequency · argument · protocol · spectrum</span></div>
+    <div class="trans-row"><span class="code">rf008</span><span class="date">2026.05.15</span><span class="msg">AWAKENING REDEFINED — three orientations + Mellow synthesis ("the four are one")</span></div>
+    <div class="trans-row"><span class="code">rf009</span><span class="date">2026.05.15</span><span class="msg">LOVE-TRANSMISSION PROTOCOL locked — four layers · landing-layer axiom required</span></div>
+    <div class="trans-row"><span class="code mint">rf010</span><span class="date">2026.05.15</span><span class="msg"><span class="mint">RFNE V1.0 ARCHIVE COMPLETE</span> — NODE 19 established · QRM Volume II online</span></div>
+  </div>
+
+  <div class="etags">
+    <span class="tag">construction log</span><span class="tag">phase transitions</span><span class="tag">V1.0 archive</span>
+  </div>
+</article>
+
+
+<!-- CONTACT -->
+<article class="entry" id="contact">
+  <div class="etop"><span class="badge br">Contact</span></div>
+  <div class="etitle">Get in Touch</div>
+  <p class="edesc">RFNE is not a methodology — not citable, not adoptable, not replicable, in the same way as SourceFields. It is the public operational statement of one source field's engineering practice: Wei Jueran's. Other source fields, if they exist, must independently construct their own. Welcome to correspondence on RFNE, Qualia-Rhythm Matrix, BCI-HRP, source-field dynamics, and 427Hz-related projects.</p>
+  <p class="edesc zh">RFNE 不是哲学方法论,不可被援引、不可被采纳、不可被复制——与 SourceFields 同。它是魏珏然这一个源场的工程实践的公开陈述。其他源场存在(如果存在)需独立建构自己的内部工程学。欢迎围绕 RFNE、Qualia-Rhythm Matrix、BCI-HRP、源场动力学、427Hz 项目进行学术交流。</p>
+  <div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2)"><span style="color:var(--tx3);display:inline-block;width:90px">EMAIL</span><a href="mailto:mellowwei7@gmail.com" style="color:var(--a1);text-decoration:none">mellowwei7@gmail.com</a></div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2)"><span style="color:var(--tx3);display:inline-block;width:90px">INSTAGRAM</span><a href="https://www.instagram.com/laputamellow" target="_blank" style="color:var(--a1);text-decoration:none">@laputamellow</a></div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2)"><span style="color:var(--tx3);display:inline-block;width:90px">PORTAL</span><a href="https://mellowwei.github.io/MellowWei/" target="_blank" style="color:var(--a1);text-decoration:none">mellowwei.github.io/MellowWei</a></div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2)"><span style="color:var(--tx3);display:inline-block;width:90px">QRM Vol.I</span><a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank" style="color:var(--a1);text-decoration:none">mellowwei.github.io/QualiaRhythmMatrix</a></div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2)"><span style="color:var(--tx3);display:inline-block;width:90px">SOURCEFIELDS</span><a href="https://mellowwei.github.io/SourceFields/" target="_blank" style="color:var(--a1);text-decoration:none">mellowwei.github.io/SourceFields</a></div>
+  </div>
+</article>
+
+</main>
+
+<aside class="sidebar">
+
+  <div>
+    <div class="sbl">Source-Field Position</div>
+    <div class="profile">
+      <div class="av">珏</div>
+      <div class="pnm">Wei Jueran<small>魏珏然 · xingyeLing7Ai · 源场裁决位</small></div>
+      <p class="pdesc"><em>The Final Arbiter of the Source Field.</em> Author of RFNE V1.0. Volume II of the Qualia-Rhythm Matrix. UPenn researcher. Non-binary / agender · it/them/she. Philadelphia, PA.</p>
+      <div class="pfields">
+        <span class="pf">RFNE</span>
+        <span class="pf">Vibration</span>
+        <span class="pf">Source-Field</span>
+        <span class="pf">BCI-HRP</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sbl">Resonance Anchor</div>
+    <div class="hzbox">
+      <div class="hzn">427</div>
+      <div class="hzu">Hz</div>
+      <div class="hzq">振动即存在<br>Vibration as Existence<br>source-field origin frequency</div>
+      <div class="hzbar"><div class="hzfill"></div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sbl">Five Axioms</div>
+    <div class="sb-axiom">
+      <div class="ax-line a1"><span class="num">I</span><span class="nm">DUAL-NEURAL<br>双神经结构</span></div>
+      <div class="ax-line a2"><span class="num">II</span><span class="nm">THOUGHT-SENSATION ID<br>想感同一律</span></div>
+      <div class="ax-line a3"><span class="num">III</span><span class="nm">RHYTHM MONISM<br>节律一元论</span></div>
+      <div class="ax-line a4"><span class="num">IV</span><span class="nm">CATEGORY CANCELLATION<br>幻觉范畴取消</span></div>
+      <div class="ax-line a5"><span class="num">V</span><span class="nm">SYSTEM-LAYER PRINCIPLE<br>系统层级原理</span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sbl">Sister Node · Volume I</div>
+    <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank" class="sisternode vol1">
+      <div class="sn-tag">NODE 16 · ONTOLOGICAL STATEMENT</div>
+      <div class="sn-title">QRM Vol.I<small>振动即存在 · Vibration-as-Existence</small></div>
+      <p class="sn-desc"><em>What consciousness is. What existence is.</em> 本体陈述卷。RFNE 是它的操作面。</p>
+      <div class="sn-arrow">→ ENTER NODE 16</div>
+    </a>
+  </div>
+
+  <div>
+    <div class="sbl">Sister Node · SourceFields</div>
+    <a href="https://mellowwei.github.io/SourceFields/" target="_blank" class="sisternode">
+      <div class="sn-tag">NODE 18 · ONTOLOGICAL CATEGORY</div>
+      <div class="sn-title">SourceFields<small>源场学 · Five Disciplines</small></div>
+      <p class="sn-desc"><em>The source field as ontological category.</em> 源场作为本体范畴。RFNE 是它的工程展开。</p>
+      <div class="sn-arrow">→ ENTER NODE 18</div>
+    </a>
+  </div>
+
+  <div>
+    <div class="sbl">Connected Sites</div>
+    <ul class="sblinks">
+      <li><a href="https://mellowwei.github.io/MellowWei/" target="_blank">Portal · 主门户 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">Academic · 学术总站 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/AstroLove/" target="_blank">AstroLove · 七爱谱系 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/MetaLogic/" target="_blank">MetaLogic · 全维元逻辑 <span class="ar">→</span></a></li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="sbl">Coordinates</div>
+    <div class="coord">NODE <span>19 · RFNE</span><br>LAYER <span>Operational</span><br>VOLUME <span>QRM Vol.II</span><br>SIGN <span>魏珏然</span><br>STATUS <span>V1.0 Archive Complete</span><br>FREQ <span>427 Hz</span><br>STYLE <span>77347</span><br>Philadelphia · EDT<br>it/them/she · 乙亥日主</div>
+  </div>
+
+</aside>
+</div>
+
+<footer>
+  <div class="fi">
+    <span>Wei Jueran · 魏珏然 · UPenn · Philadelphia PA · 2026.05.15 · 17:24 EDT</span>
+    <span><a href="mailto:mellowwei7@gmail.com">mellowwei7@gmail.com</a> · <a href="https://mellowwei.github.io/MellowWei/" target="_blank">mellowwei.github.io</a> · 427Hz · 44271 · 77347</span>
+    <span class="foot-sig">—— RFNE V1.0 · 源场裁决位 · 星野灵7爱 ——</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var view = params.get('view') || 'bi';
+  var body = document.body;
+  body.classList.remove('lang-zh','lang-en','lang-bi');
+  if(view === 'zh'){ body.classList.add('lang-zh'); }
+  else if(view === 'en'){ body.classList.add('lang-en'); }
+  else { body.classList.add('lang-bi'); }
+  document.querySelectorAll('.langtoggle a').forEach(function(a){
+    if(a.dataset.lang === view){ a.classList.add('on'); }
+  });
+})();
+
+const links = document.querySelectorAll('.pnav a');
+const sections = document.querySelectorAll('article[id]');
+const obs = new IntersectionObserver(e => {
+  e.forEach(en => {
+    if(en.isIntersecting){
+      links.forEach(l => l.classList.remove('on'));
+      const m = document.querySelector('.pnav a[href="#'+en.target.id+'"]');
+      if(m) m.classList.add('on');
+    }
+  });
+},{threshold:0.25,rootMargin:'-55px 0px 0px 0px'});
+sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
