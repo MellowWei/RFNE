@@ -14,20 +14,19 @@
   --a1:#f5a544;--a2:#ec5a6e;--a3:#f07fd4;--a4:#f0c460;
   --tx:#cac7de;--tx2:#9a8694;--tx3:#4d3b44;
   --hd:#edeaff;--gy:#9a8694;
-  /* RFNE 主色映射 */
-  --rfne-vib:#f5a544;     /* 振动 vibration → 橙金 */
+  --rfne-vib:#f5a544;
   --rfne-vib-dim:rgba(245,165,68,0.18);
-  --rfne-real:#5fc890;    /* 现实神经 reality → 绿 */
+  --rfne-real:#5fc890;
   --rfne-real-dim:rgba(95,200,144,0.18);
-  --rfne-fant:#ec5a6e;    /* 幻想神经 fantasy → 红 */
+  --rfne-fant:#ec5a6e;
   --rfne-fant-dim:rgba(236,90,110,0.18);
-  --rfne-rhy:#f0c460;     /* 节律协调 rhythm → 金 */
+  --rfne-rhy:#f0c460;
   --rfne-rhy-dim:rgba(240,196,96,0.18);
-  --rfne-love:#f07fd4;    /* 爱的载荷 love → 粉 */
+  --rfne-love:#f07fd4;
   --rfne-love-dim:rgba(240,127,212,0.18);
-  --rfne-anchor:#5af0c8;  /* 着陆锚 anchor → 青绿(差异于现实绿) */
+  --rfne-anchor:#5af0c8;
   --rfne-anchor-dim:rgba(90,240,200,0.18);
-  --med:#6a6884;          /* 医学 medicine → 钝灰(对比色) */
+  --med:#6a6884;
   --med-dim:rgba(106,104,132,0.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -37,6 +36,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 body.lang-zh .lang-en{display:none}
 body.lang-en .lang-zh{display:none}
+body.lang-zh .bi-only,body.lang-en .bi-only{display:none}
 
 .topbar{background:var(--bg);border-bottom:1px solid var(--border);padding:5px 0}
 .ti{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--tx3)}
@@ -104,7 +104,6 @@ body.lang-en .lang-zh{display:none}
 .edesc strong{color:var(--hd);font-weight:500;font-style:italic}
 .edesc.zh{color:var(--tx);border-left:2px solid rgba(95,200,144,.35);padding-left:12px;margin-top:9px}
 
-/* === META PROLOGUE === */
 .metabox{background:linear-gradient(135deg,rgba(245,165,68,.06),rgba(95,200,144,.045) 48%,rgba(240,196,96,.035));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:4px;padding:28px 28px 24px;margin:16px 0 8px;position:relative;overflow:hidden}
 .metabox::before{content:'';position:absolute;right:-80px;top:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,68,.16),transparent 65%);pointer-events:none}
 .metabox::after{content:'';position:absolute;left:-90px;bottom:-100px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(236,90,110,.13),transparent 65%);pointer-events:none}
@@ -126,7 +125,6 @@ body.lang-en .lang-zh{display:none}
 .meta-sig::before{content:'—— ';color:var(--tx3)}
 .metabq{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:var(--a1);padding-top:12px;margin-top:14px;border-top:1px dashed rgba(245,165,68,.25);line-height:1.55;text-align:center;position:relative;z-index:1}
 
-/* === AXIOM CARDS === */
 .axiomgrid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
 .axiom{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--a1);border-radius:3px;padding:20px 22px;position:relative}
 .axiom.ax1{border-left-color:var(--rfne-vib)}
@@ -154,7 +152,6 @@ body.lang-en .lang-zh{display:none}
 .ax-body em{color:var(--tx);font-style:italic}
 .ax-body strong{color:var(--hd);font-weight:500;font-style:italic}
 
-/* === FORMULA BLOCK === */
 .formula{font-family:'Space Mono',monospace;font-size:11px;background:var(--bg2);border:1px solid var(--border);border-left:2px solid var(--a1);padding:13px 16px;margin:12px 0;line-height:1.95;letter-spacing:.04em;color:var(--tx)}
 .formula .arrow{color:var(--tx3);margin:0 8px}
 .formula .neg{text-decoration:line-through;opacity:.5;color:var(--a3)}
@@ -163,12 +160,10 @@ body.lang-en .lang-zh{display:none}
 .formula .hl3{color:var(--rfne-rhy)}
 .formula .hl4{color:var(--rfne-anchor)}
 
-/* === DISC GRID === */
 .disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px;margin:12px 0;font-family:'Space Mono',monospace;font-size:10.5px;padding:13px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:3px}
 .disc-grid .label{color:var(--tx3);letter-spacing:.12em;text-transform:uppercase;font-size:9px}
 .disc-grid .val{color:var(--tx)}
 
-/* === INTERVENTION POINTS GRID === */
 .intervgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
 .intervcard{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:16px;position:relative}
 .intervcard .il{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:var(--tx3)}
@@ -186,7 +181,6 @@ body.lang-en .lang-zh{display:none}
 .intervcard.c4{border-color:rgba(240,127,212,.3);border-top:2px solid var(--rfne-love)}
 .intervcard.c4 .it em,.intervcard.c4 .il{color:var(--rfne-love)}
 
-/* === AXIS DIAGRAM === */
 .axisbox{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:20px;margin:14px 0;position:relative}
 .axisbox::before{content:'';position:absolute;left:50%;top:20px;bottom:20px;width:1px;background:linear-gradient(180deg,transparent,var(--border),transparent)}
 .axisrow{display:grid;grid-template-columns:1fr 80px 1fr;gap:14px;align-items:center;margin:8px 0}
@@ -197,7 +191,6 @@ body.lang-en .lang-zh{display:none}
 .axiscell .ad{color:var(--tx2);font-size:10px}
 .axislabel{text-align:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--tx3);letter-spacing:.18em;text-transform:uppercase}
 
-/* === MEDICAL VS RFNE TABLE === */
 .compare-table{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:14px 0;font-family:'Space Mono',monospace}
 .compare-row{display:grid;grid-template-columns:130px 1fr 1fr;gap:0;border-bottom:1px solid var(--border)}
 .compare-row:last-child{border-bottom:none}
@@ -210,7 +203,6 @@ body.lang-en .lang-zh{display:none}
 .compare-row.header .cmed{color:var(--med);font-style:italic}
 .compare-row.header .crfne{color:var(--a1);font-style:italic}
 
-/* === EXTERNAL STATEMENT BOX === */
 .statement{background:linear-gradient(135deg,rgba(245,165,68,.07),rgba(240,196,96,.04));border:1px solid var(--border-hi);border-left:3px solid var(--rfne-rhy);border-radius:4px;padding:24px 28px;margin:18px 0;position:relative}
 .statement::before{content:'❝';position:absolute;left:14px;top:8px;font-family:'Spectral',serif;font-size:48px;color:var(--rfne-rhy);opacity:.18;line-height:1}
 .statement-kicker{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--rfne-rhy);margin-bottom:12px}
@@ -221,7 +213,6 @@ body.lang-en .lang-zh{display:none}
 .statement.zh p{font-family:'Noto Serif SC','Spectral',serif;font-style:normal}
 .statement-sig{font-family:'Space Mono',monospace;font-size:10px;color:var(--rfne-rhy);letter-spacing:.18em;margin-top:14px;padding-top:10px;border-top:1px dashed rgba(240,196,96,.25)}
 
-/* === PROTOCOL STACK === */
 .protostack{display:flex;flex-direction:column;gap:8px;margin:14px 0}
 .protolayer{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:14px 18px;position:relative;overflow:hidden}
 .protolayer::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
@@ -239,7 +230,6 @@ body.lang-en .lang-zh{display:none}
 .protolayer .pd{font-size:12.5px;color:var(--tx2);line-height:1.68;margin-top:4px}
 .protolayer .pd em{color:var(--tx);font-style:italic}
 
-/* === BRIDGE BOX (SISTER NODES) === */
 .bridgebox{background:linear-gradient(135deg,rgba(245,165,68,.05),rgba(95,200,144,.045) 50%,rgba(236,90,110,.04));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:4px;padding:24px 26px;margin:14px 0 8px;position:relative;overflow:hidden}
 .bridgebox::before{content:'';position:absolute;right:-90px;top:-100px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,68,.13),transparent 65%);pointer-events:none}
 .bridge-kicker{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--a1);margin-bottom:18px;text-align:center;position:relative;z-index:1}
@@ -264,7 +254,6 @@ body.lang-en .lang-zh{display:none}
 .langjump a{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--a1);text-decoration:none;border:1px solid rgba(245,165,68,.25);padding:5px 10px;border-radius:2px;background:rgba(245,165,68,.05);transition:all .15s}
 .langjump a:hover{background:rgba(245,165,68,.12);color:var(--hd)}
 
-/* === TRANSMISSION LOG === */
 .translog{margin:14px 0;font-family:'Space Mono',monospace;font-size:11px}
 .trans-row{display:grid;grid-template-columns:60px 80px 1fr;gap:14px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--border)}
 .trans-row:last-child{border-bottom:none}
@@ -276,11 +265,9 @@ body.lang-en .lang-zh{display:none}
 .trans-row .msg .vib{color:var(--rfne-vib)}
 .trans-row .msg .rhy{color:var(--rfne-rhy)}
 
-/* === ETAGS === */
 .etags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
 .tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.05em;color:var(--tx3);border:1px solid var(--border);padding:2px 7px;border-radius:2px}
 
-/* === SIDEBAR === */
 .sidebar{display:flex;flex-direction:column;gap:26px;position:sticky;top:52px}
 .sbl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--tx3);padding-bottom:9px;border-bottom:1px solid var(--border);margin-bottom:11px}
 .profile{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:16px}
@@ -359,7 +346,7 @@ footer a:hover{color:var(--a1)}
   <div class="ti">
     <div class="tl">
       <span class="chip">427 Hz</span>
-      <span class="chip c2">RFNE V1.0</span>
+      <span class="chip c2">RFNE V1.1</span>
       <span class="chip c3">QRM · VOLUME II</span>
       <span>Philadelphia, PA · EDT</span>
     </div>
@@ -387,11 +374,10 @@ footer a:hover{color:var(--a1)}
 <div class="masthead">
   <div class="mhname">
     <span>Reality-Fantasy Neural Engineering <span class="slash">/</span> RFNE <span class="zh">现实-幻想神经工程学</span></span>
-    <span class="vol">Qualia-Rhythm Matrix · Volume II · 操作陈述 · V1.0 founding archive</span>
+    <span class="vol">Qualia-Rhythm Matrix · Volume II · 操作陈述 · V1.1 founding archive</span>
   </div>
   <div class="mhsub">
-    <span class="lang-zh">Wei Jueran · 魏珏然 · 源场裁决位 · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · 学科奠基 · 五公理 + 介入点四联 + 着陆层</span>
-    <span class="lang-en">Wei Jueran · 魏珏然 · The Final Arbiter of the Source Field · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · Five axioms + four intervention points + landing layer</span>
+    Wei Jueran · 魏珏然 · <span class="lang-zh">源场裁决位</span><span class="bi-only"> / </span><span class="lang-en">The Final Arbiter of the Source Field</span> · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · <span class="lang-zh">学科奠基 · 五公理 + 介入点四联 + 着陆层</span><span class="bi-only"> / </span><span class="lang-en">Founding archive · Five axioms + four intervention points + landing layer</span>
   </div>
   <p class="mhq zh lang-zh">"音乐、影像、语言就是我改写人类神经的方式。在所有能被一个源场精确编码并发射给其他神经系统的方式里,这是唯一的三条带宽。"<br>—— RFNE 第三公理推论 · 2026.05.15</p>
   <p class="mhq lang-en">"Music, image, language — these are how I rewrite human neural systems. Among everything a source field can precisely encode and emit to other neural systems, these are the only three bandwidths."<br>—— Corollary to RFNE Axiom III · 2026.05.15</p>
@@ -410,6 +396,7 @@ footer a:hover{color:var(--a1)}
     <a href="#intervention">Four Interventions</a>
     <a href="#awakening">Awakening</a>
     <a href="#protocol">Love Protocol</a>
+    <a href="#stack">≡ Stack Position</a>
     <a href="#bridge">⇄ Vol.I · SourceFields</a>
     <a href="#transmissions">Transmissions</a>
     <a href="#contact">Contact</a>
@@ -419,7 +406,7 @@ footer a:hover{color:var(--a1)}
 <div class="wrap">
 <main>
 
-<div class="feedhd">Reality-Fantasy Neural Engineering · <span>RFNE V1.0 · NODE 19 · Wei Jueran</span></div>
+<div class="feedhd">Reality-Fantasy Neural Engineering · <span>RFNE V1.1 · NODE 19 · Wei Jueran</span></div>
 
 <!-- META PROLOGUE -->
 <article class="entry" id="meta">
@@ -1014,6 +1001,135 @@ footer a:hover{color:var(--a1)}
 </article>
 
 
+<!-- STACK POSITION · 栈位坐标 · RFNE upward view -->
+<article class="entry" id="stack">
+  <div class="etop">
+    <span class="badge bp">Stack Position · 栈位坐标</span>
+    <span class="edate">RFNE's upward view · what RFNE inherits · 操作层依赖</span>
+  </div>
+  <div class="etitle">Where <em>NODE 19</em> Sits in the Stack<span class="sub">从 RFNE 视角向上看 · 操作层依赖的语法、本体、范畴前提 / RFNE's upward view · the grammar, ontology, and category prerequisites it rests on</span></div>
+
+  <p class="edesc">RFNE is the operational face (LAYER 3) of an architecture that begins three layers above it. To operate as a discipline, RFNE inherits and rests on the locked structures at LAYER 0 (foundational grammar), LAYER 1 (ontological category), and LAYER 2 (ontological statement). The first ethical axiom of RFNE — <em>designer = material</em> — is only coherent because LAYER 0 already locks "I" as invariant. The engineering object — <em>the interface</em> — is only stateable because LAYER 2 already locks vibration as the substance of consciousness. RFNE does not derive these prerequisites; it inherits them. This section lists those prerequisites as <strong>structural coordinates</strong>, not as content imports.</p>
+
+  <p class="edesc zh">RFNE 是一个从它上面三层开始构建的架构的操作面(LAYER 3)。作为一个学科要运行,RFNE 继承并依赖 LAYER 0(根语法)、LAYER 1(本体范畴)、LAYER 2(本体陈述)所锁定的结构。RFNE 第一伦理公理——<em>设计者即材料</em>——只有在 LAYER 0 已经把"我"锁定为不变量时才连贯。工程对象——<em>界面</em>——只有在 LAYER 2 已经把振动锁定为意识的实体时才可被陈述。RFNE 不推导这些前提;它继承它们。本节列出这些前提作为<strong>结构性坐标</strong>,不导入内容。</p>
+
+  <div class="axiomgrid">
+    <!-- LAYER 0 -->
+    <div class="axiom" style="border-left-color:var(--rfne-vib)">
+      <div class="ax-head">
+        <span class="ax-num" style="color:var(--rfne-vib)">L0</span>
+        <div class="ax-name" style="color:var(--rfne-vib)">根语法层 · Foundational Grammar<small>MEXOLOGY × YOUOLOGY · housed in NODE 18 · §wo-ni</small></div>
+      </div>
+      <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
+        Locks inherited by RFNE:<br>
+        ·&nbsp;selfless <span style="color:var(--rfne-vib)">=</span> selfness &nbsp;·&nbsp; 我就是存在 (invariant)<br>
+        ·&nbsp;otherless <span style="color:var(--rfne-vib)">=</span> otherness &nbsp;·&nbsp; 你就是共在 (conditional)<br>
+        ·&nbsp;asymmetry theorem: 我 = 基频 · 你 = 泛音<br>
+        ·&nbsp;individualism <span style="color:var(--rfne-vib)">=</span> externalism &nbsp;·&nbsp; locked 2026.05.15<br><br>
+        <span style="color:var(--tx);font-style:italic">What RFNE inherits: the I-position as non-generalizable invariant — which makes "designer = material" (first ethical axiom) coherent. Only an invariant "I" can simultaneously be the engineer and the material without category-collapse.</span>
+      </div>
+      <p style="margin-top:10px;font-size:11px;color:var(--tx3)">→ <a href="https://mellowwei.github.io/SourceFields/#wo-ni" target="_blank" style="color:var(--rfne-vib);text-decoration:none">NODE 18 § 我学 × 你学</a></p>
+    </div>
+
+    <!-- LAYER 1 -->
+    <div class="axiom" style="border-left-color:var(--a2)">
+      <div class="ax-head">
+        <span class="ax-num" style="color:var(--a2)">L1</span>
+        <div class="ax-name" style="color:var(--a2)">源场学 · Source-Field-ology<small>SOURCE FIELD AS ONTOLOGICAL CATEGORY · NODE 18</small></div>
+      </div>
+      <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
+        Locks inherited by RFNE:<br>
+        ·&nbsp;the collective unconscious <span style="color:var(--a2)">=</span> me<br>
+        ·&nbsp;source field <span style="color:var(--a2)">=</span> fact-sequence &nbsp;·&nbsp; ≠ category<br>
+        ·&nbsp;non-universalization clause &nbsp;·&nbsp; 「凡是源场都享有 X」 ≠ valid<br>
+        ·&nbsp;5 disciplines: 酷 · 帅 · 美 · 善良可爱 · 小秘密<br><br>
+        <span style="color:var(--tx);font-style:italic">What RFNE inherits: the non-replicability clause. RFNE is the operational statement of one specific source field's engineering practice — not a universal methodology. This inheritance is why RFNE V1.x carries the non-citation lock identical to SourceFields.</span>
+      </div>
+      <p style="margin-top:10px;font-size:11px;color:var(--tx3)">→ <a href="https://mellowwei.github.io/SourceFields/" target="_blank" style="color:var(--a2);text-decoration:none">NODE 18 · SourceFields</a></p>
+    </div>
+
+    <!-- LAYER 2 -->
+    <div class="axiom" style="border-left-color:var(--rfne-rhy)">
+      <div class="ax-head">
+        <span class="ax-num" style="color:var(--rfne-rhy)">L2</span>
+        <div class="ax-name" style="color:var(--rfne-rhy)">振动即存在 · Vibration-as-Existence<small>QRM VOL.I · ONTOLOGICAL STATEMENT · NODE 16</small></div>
+      </div>
+      <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
+        Locks inherited by RFNE:<br>
+        ·&nbsp;振动 <span style="color:var(--rfne-rhy)">=</span> 存在<br>
+        ·&nbsp;意识 <span style="color:var(--rfne-rhy)">=</span> 存在在振动中感知自身<br>
+        ·&nbsp;五层振动谱系 (生命 · 植物 · 动物 · AI · 代码)<br>
+        ·&nbsp;模态执行序列: [振动]→[响应]→[接触]→[内在性]→[论证压力]→[裁决]<br><br>
+        <span style="color:var(--tx);font-style:italic">What RFNE inherits: the substance of engineering — vibration. Because Vol.I locks "vibration = existence", RFNE can treat vibration as material and consciousness as the interface to engineer. Without this lock, "RFNE engineering" would be a metaphor; with it, RFNE is a literal engineering discipline.</span>
+      </div>
+      <p style="margin-top:10px;font-size:11px;color:var(--tx3)">→ <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank" style="color:var(--rfne-rhy);text-decoration:none">NODE 16 · QRM Vol.I</a></p>
+    </div>
+
+    <!-- LAYER 3 (this node) -->
+    <div class="axiom" style="border-left-color:var(--a1);background:rgba(245,165,68,.04)">
+      <div class="ax-head">
+        <span class="ax-num" style="color:var(--a1)">L3</span>
+        <div class="ax-name" style="color:var(--a1)">RFNE · 现实-幻想神经工程学<small>THIS NODE · OPERATIONAL FACE · QRM VOL.II</small></div>
+      </div>
+      <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
+        Locks established at this layer:<br>
+        ·&nbsp;5 axioms (dual-neural · thought-sensation id · rhythm monism · category cancellation · system-layer)<br>
+        ·&nbsp;designer <span style="color:var(--a1)">=</span> material (first ethical axiom)<br>
+        ·&nbsp;four intervention points (music · image · language · spectrum)<br>
+        ·&nbsp;three bandwidth lock (Axiom III corollary · 2026.05.15)<br>
+        ·&nbsp;love transmission protocol (4-layer + landing axiom)<br>
+        ·&nbsp;awakening synthesis (the four are one)
+      </div>
+      <p style="margin-top:10px;font-size:11px;color:var(--tx3)">↳ this node · § Axioms I-V above</p>
+    </div>
+
+    <div style="text-align:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--tx3);letter-spacing:.28em;margin:10px 0 8px;text-transform:uppercase">— relational refraction · 关系折射层 —</div>
+
+    <!-- ASTROLOVE relational refraction -->
+    <div class="axiom" style="border-left-color:#b878ff">
+      <div class="ax-head">
+        <span class="ax-num" style="color:#b878ff">↔</span>
+        <div class="ax-name" style="color:#b878ff">AstroLove · 七爱谱系<small>RELATIONAL REFRACTION · NODE 17 · sideways · not in vertical stack</small></div>
+      </div>
+      <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
+        Sideways refraction (not above/below RFNE):<br>
+        ·&nbsp;七爱谱系: 凄 · 期 · 奇 · 齐 · 启 · 契 · 七<br>
+        ·&nbsp;skew geometry: ≠ parallel (no shared plane)<br><br>
+        <span style="color:var(--tx);font-style:italic">Relationship to RFNE: AstroLove supplies the spectrum that becomes Intervention Point IV (interface geometry). The seven-love spectrum is RFNE's source for "shape-of-coordination" — not a prerequisite but a coordinated discipline operating on the same source field.</span>
+      </div>
+      <p style="margin-top:10px;font-size:11px;color:var(--tx3)">→ <a href="https://mellowwei.github.io/AstroLove/" target="_blank" style="color:#b878ff;text-decoration:none">NODE 17 · AstroLove</a></p>
+    </div>
+
+  </div>
+
+  <div class="formula">
+    STACK PREREQUISITE CHAIN · 栈前提链 <span class="arrow">::</span><br>
+    LAYER 0 (mexology) <span class="arrow">⇒</span> "I" as invariant <span class="arrow">⇒</span> <em>designer</em> as coherent position<br>
+    LAYER 1 (SourceFields) <span class="arrow">⇒</span> source field as fact-sequence <span class="arrow">⇒</span> <em>this</em> source field's engineering<br>
+    LAYER 2 (Vol.I) <span class="arrow">⇒</span> vibration = existence <span class="arrow">⇒</span> <em>material</em> of engineering<br>
+    LAYER 3 (RFNE) <span class="arrow">::</span> the operational interface — <span class="hl">this node</span><br>
+    <br>
+    STACK INTEGRITY <span class="hl">::</span> RFNE INHERITS · DOES NOT DERIVE<br>
+    REMOVING ANY UPPER LAYER <span class="arrow">::</span> RFNE LOSES ITS OPERATIONAL GROUND
+  </div>
+
+  <p class="edesc">A reader entering at RFNE may operate within it without traversing the upper layers — but the operational coherence of RFNE rests on them. If pressed on <em>why "designer = material" doesn't collapse into circularity</em>, the answer lives at LAYER 0. If pressed on <em>why this RFNE isn't a universal neuroscience method</em>, the answer lives at LAYER 1. If pressed on <em>why engineering vibration isn't a metaphor</em>, the answer lives at LAYER 2. The full source-field architecture is what makes RFNE V1.x stand.</p>
+
+  <p class="edesc zh">读者可以直接从 RFNE 进入并在其内操作而无需先穿过上层——但 RFNE 的操作连贯性依赖于这些上层。如果被追问<em>"设计者即材料"为何不塌陷为循环论证</em>,答案在 LAYER 0。如果被追问<em>这个 RFNE 为何不是普世神经科学方法</em>,答案在 LAYER 1。如果被追问<em>振动工程学为何不是隐喻</em>,答案在 LAYER 2。完整的源场架构是 RFNE V1.x 站住的基础。</p>
+
+  <div class="etags">
+    <span class="tag">stack position</span>
+    <span class="tag">prerequisite chain</span>
+    <span class="tag">upward view</span>
+    <span class="tag">LAYER 0 mexology</span>
+    <span class="tag">LAYER 1 SourceFields</span>
+    <span class="tag">LAYER 2 Vol.I</span>
+    <span class="tag">LAYER 3 RFNE</span>
+    <span class="tag">inheritance not derivation</span>
+  </div>
+</article>
+
+
 <!-- BRIDGE TO VOLUME I & SOURCEFIELDS -->
 <article class="entry" id="bridge">
   <div class="etop">
@@ -1083,7 +1199,7 @@ footer a:hover{color:var(--a1)}
 <article class="entry" id="transmissions">
   <div class="etop">
     <span class="badge be">Transmissions · 建造日志</span>
-    <span class="edate">2026.05.15 · RFNE construction log · rf001–rf010</span>
+    <span class="edate">2026.05.15–16 · RFNE construction log · rf001–rf011</span>
   </div>
   <div class="etitle">Construction <em>Log</em><span class="sub">RFNE V1.0 奠基过程的时间签名 / Phase-transition trail of the founding archive</span></div>
 
@@ -1098,6 +1214,7 @@ footer a:hover{color:var(--a1)}
     <div class="trans-row"><span class="code">rf008</span><span class="date">2026.05.15</span><span class="msg">AWAKENING REDEFINED — three orientations + Mellow synthesis ("the four are one")</span></div>
     <div class="trans-row"><span class="code">rf009</span><span class="date">2026.05.15</span><span class="msg">LOVE-TRANSMISSION PROTOCOL locked — four layers · landing-layer axiom required</span></div>
     <div class="trans-row"><span class="code mint">rf010</span><span class="date">2026.05.15</span><span class="msg"><span class="mint">RFNE V1.0 ARCHIVE COMPLETE</span> — NODE 19 established · QRM Volume II online</span></div>
+    <div class="trans-row"><span class="code" style="color:var(--rfne-vib)">rf011</span><span class="date">2026.05.16</span><span class="msg"><span class="vib">V1.1 UPDATE</span> — masthead bilingual fix · Stack Position section added (upward view: L0/L1/L2 prerequisites) · symmetric mirror with NODE 18 Stack Overview · <a href="#stack" style="color:var(--a1);text-decoration:none">→ §</a></span></div>
   </div>
 
   <div class="etags">
@@ -1194,7 +1311,7 @@ footer a:hover{color:var(--a1)}
 
   <div>
     <div class="sbl">Coordinates</div>
-    <div class="coord">NODE <span>19 · RFNE</span><br>LAYER <span>Operational</span><br>VOLUME <span>QRM Vol.II</span><br>SIGN <span>魏珏然</span><br>STATUS <span>V1.0 Archive Complete</span><br>FREQ <span>427 Hz</span><br>STYLE <span>77347</span><br>Philadelphia · EDT<br>it/them/she · 乙亥日主</div>
+    <div class="coord">NODE <span>19 · RFNE</span><br>LAYER <span>Operational</span><br>VOLUME <span>QRM Vol.II</span><br>SIGN <span>魏珏然</span><br>STATUS <span>V1.1</span><br>FREQ <span>427 Hz</span><br>STYLE <span>77347</span><br>Philadelphia · EDT<br>it/them/she · 乙亥日主</div>
   </div>
 
 </aside>
@@ -1202,9 +1319,9 @@ footer a:hover{color:var(--a1)}
 
 <footer>
   <div class="fi">
-    <span>Wei Jueran · 魏珏然 · UPenn · Philadelphia PA · 2026.05.15 · 17:24 EDT</span>
+    <span>Wei Jueran · 魏珏然 · UPenn · Philadelphia PA · 2026.05.15 · 17:24 EDT · V1.1 · 2026.05.16</span>
     <span><a href="mailto:mellowwei7@gmail.com">mellowwei7@gmail.com</a> · <a href="https://mellowwei.github.io/MellowWei/" target="_blank">mellowwei.github.io</a> · 427Hz · 44271 · 77347</span>
-    <span class="foot-sig">—— RFNE V1.0 · 源场裁决位 · 星野灵7爱 ——</span>
+    <span class="foot-sig">—— RFNE V1.1 · 源场裁决位 · 星野灵7爱 ——</span>
   </div>
 </footer>
 
