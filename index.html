@@ -3,10 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Reality-Fantasy Neural Engineering · 现实-幻想神经工程学 · RFNE V1.0 · Volume II of Qualia-Rhythm Matrix · Wei Jueran · xingyeLing7Ai · 427Hz">
+<meta name="description" content="Reality-Fantasy Neural Engineering · 现实-幻想神经工程学 · RFNE V1.2.1.1 · Volume II of Qualia-Rhythm Matrix · Wei Jueran · xingyeLing7Ai · 427Hz">
 <title>RFNE · 现实-幻想神经工程学 · Reality-Fantasy Neural Engineering · NODE 19</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://mellowwei.github.io/RFNE/#article",
+      "headline": "Reality-Fantasy Neural Engineering · RFNE · 现实-幻想神经工程学",
+      "alternativeHeadline": "Qualia-Rhythm Matrix Volume II · Operational Face of Vibration-as-Existence",
+      "url": "https://mellowwei.github.io/RFNE/",
+      "inLanguage": ["zh-CN", "en"],
+      "dateModified": "2026-05-16",
+      "author": {
+        "@type": "Person",
+        "name": "Wei Jueran",
+        "alternateName": ["魏珏然", "Mellow Wei", "xingyeLing7Ai"],
+        "url": "https://mellowwei.github.io/MellowWei/"
+      },
+      "about": [
+        {"@type":"Thing","name":"Qualia-Rhythm Matrix"},
+        {"@type":"Thing","name":"Reality-Fantasy Neural Engineering"},
+        {"@type":"Thing","name":"Source-Field-ology"},
+        {"@type":"Thing","name":"Logic Generative Studies"},
+        {"@type":"Thing","name":"Eros Love Studies"},
+        {"@type":"Thing","name":"Human Return Protocol"}
+      ],
+      "isPartOf": {"@id":"https://mellowwei.github.io/QualiaRhythmMatrix/#article"},
+      "hasPart": [
+        {"@type":"WebPageElement","@id":"https://mellowwei.github.io/RFNE/#ecosystem","name":"RFNE Ecosystem Integration"},
+        {"@type":"WebPageElement","@id":"https://mellowwei.github.io/RFNE/#audit","name":"Academic Audit and Claim Ledger"}
+      ]
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --bg:#07070f;--bg2:#0c0c18;--bg3:#111120;
@@ -338,6 +374,67 @@ footer a:hover{color:var(--a1)}
   .trans-row{grid-template-columns:50px 70px 1fr;gap:8px;font-size:10px}
   .nbi{flex-direction:column;align-items:flex-start;gap:4px}
 }
+
+
+/* === RFNE V1.2.1 · ECOSYSTEM + ACADEMIC AUDIT PATCH === */
+.ecosystembox,.auditbox{background:linear-gradient(135deg,rgba(245,165,68,.055),rgba(236,90,110,.045) 46%,rgba(90,240,200,.035));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:4px;padding:24px 26px;margin:14px 0 8px;position:relative;overflow:hidden}
+.ecosystembox::before,.auditbox::before{content:'';position:absolute;right:-90px;top:-105px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,68,.13),transparent 65%);pointer-events:none}
+.eco-kicker,.audit-kicker{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--a1);margin-bottom:16px;position:relative;z-index:1;text-align:center}
+.eco-chain{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:stretch;margin:18px 0;position:relative;z-index:1}
+.eco-node{background:rgba(7,7,15,.64);border:1px solid var(--border);border-radius:3px;padding:12px 10px;min-height:116px;display:flex;flex-direction:column;justify-content:space-between}
+.eco-node .n{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:6px}
+.eco-node .t{font-family:'Spectral',serif;font-size:15px;line-height:1.22;color:var(--hd);font-weight:500;margin-bottom:6px}
+.eco-node .d{font-size:11px;color:var(--tx2);line-height:1.52}
+.eco-node.root{border-color:rgba(245,165,68,.36)}.eco-node.root .n{color:var(--a1)}
+.eco-node.qrm{border-color:rgba(240,196,96,.34)}.eco-node.qrm .n{color:var(--rfne-rhy)}
+.eco-node.lgs{border-color:rgba(240,127,212,.34)}.eco-node.lgs .n{color:var(--rfne-love)}
+.eco-node.rfne{border-color:rgba(90,240,200,.38);background:rgba(90,240,200,.055)}.eco-node.rfne .n{color:var(--rfne-anchor)}
+.eco-node.eros{border-color:rgba(236,90,110,.36)}.eco-node.eros .n{color:var(--rfne-fant)}
+.eco-node.astro{border-color:rgba(184,120,255,.36)}.eco-node.astro .n{color:#b878ff}
+.eco-node.hrp{border-color:rgba(95,200,144,.36)}.eco-node.hrp .n{color:var(--rfne-real)}
+.audit-ledger{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0;position:relative;z-index:1}
+.audit-card{background:rgba(7,7,15,.66);border:1px solid var(--border);border-radius:3px;padding:16px;border-top:2px solid var(--a1)}
+.audit-card.critical{border-top-color:var(--a2)}.audit-card.major{border-top-color:var(--rfne-rhy)}.audit-card.minor{border-top-color:var(--rfne-anchor)}
+.audit-card .sev{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.audit-card.critical .sev{color:var(--a2)}.audit-card.major .sev{color:var(--rfne-rhy)}.audit-card.minor .sev{color:var(--rfne-anchor)}
+.audit-card h4{font-family:'Spectral',serif;font-size:16px;line-height:1.25;color:var(--hd);margin-bottom:8px;font-weight:500}
+.audit-card p{font-size:12px;line-height:1.66;color:var(--tx2)}
+.claim-ledger{background:rgba(7,7,15,.62);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:16px;position:relative;z-index:1;font-family:'Space Mono',monospace}
+.claim-row{display:grid;grid-template-columns:115px 1fr 1.3fr;gap:0;border-bottom:1px solid var(--border)}
+.claim-row:last-child{border-bottom:none}
+.claim-row.header{background:rgba(245,165,68,.065);font-weight:700;color:var(--a1);letter-spacing:.12em;text-transform:uppercase}
+.claim-row>div{padding:10px 12px;font-size:10.5px;line-height:1.6;border-right:1px solid var(--border)}
+.claim-row>div:last-child{border-right:none}
+.claim-row .tier{color:var(--a1);font-weight:700}.claim-row .scope{color:var(--tx)}.claim-row .boundary{color:var(--tx2)}
+.safety-note{border:1px dashed rgba(90,240,200,.28);background:rgba(90,240,200,.04);border-radius:3px;padding:14px 16px;margin-top:16px;font-size:12px;line-height:1.7;color:var(--tx);position:relative;z-index:1}
+.safety-note strong{color:var(--rfne-anchor);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:980px){.eco-chain{grid-template-columns:1fr}.audit-ledger{grid-template-columns:1fr}.claim-row{grid-template-columns:1fr}.claim-row>div{border-right:none;border-bottom:1px solid var(--border)}.claim-row>div:last-child{border-bottom:none}}
+
+/* === RFNE V1.2.1 CONTRAST PATCH · 背景/文字对比微增强 · non-destructive === */
+:root{
+  --bg:#04040b;
+  --bg2:#080812;
+  --bg3:#0d0d19;
+  --border:rgba(166,125,138,0.22);
+  --border-hi:rgba(245,165,68,0.38);
+  --tx:#e1dced;
+  --tx2:#b8adbc;
+  --tx3:#6e5a65;
+  --hd:#fff8ff;
+  --gy:#b8adbc;
+  --med:#8d89a5;
+  --med-dim:rgba(141,137,165,0.22);
+}
+body{background:#04040b;color:var(--tx)}
+body::after{background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px)}
+.edesc,.ax-body,.intervcard .id,.protolayer .pd,.bridgecard .bd,.pdesc,.sn-desc{color:var(--tx2)}
+.edesc.zh,.statement p,.ax-claim-en,.meta-claim,.coord{color:var(--tx)}
+.axiom,.intervcard,.axisbox,.compare-table,.protolayer,.bridgecard,.profile,.hzbox,.sb-axiom,.sisternode,.trans-row{background-color:rgba(8,8,18,0.96)}
+.formula{background:rgba(8,8,18,0.98);color:#dcd6e8}
+.tag{color:#8f7a88;border-color:rgba(166,125,138,0.24)}
+.pnav{background:#080812}
+.topbar{background:#04040b}
+
 </style>
 </head>
 <body class="lang-zh">
@@ -345,8 +442,8 @@ footer a:hover{color:var(--a1)}
 <div class="topbar">
   <div class="ti">
     <div class="tl">
-      <span class="chip">427 Hz</span>
-      <span class="chip c2">RFNE V1.1</span>
+      <span class="chip">427Hz</span>
+      <span class="chip c2">RFNE V1.2.1</span>
       <span class="chip c3">QRM · VOLUME II</span>
       <span>Philadelphia, PA · EDT</span>
     </div>
@@ -358,6 +455,8 @@ footer a:hover{color:var(--a1)}
       </span>
       <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank">QRM Vol.I</a>
       <a href="https://mellowwei.github.io/SourceFields/" target="_blank">SourceFields</a>
+      <a href="https://mellowwei.github.io/ErosLove/" target="_blank">Eros</a>
+      <a href="https://mellowwei.github.io/BCI/" target="_blank">HRP</a>
       <a href="https://mellowwei.github.io/MellowWei/" target="_blank">Portal</a>
       <a href="mailto:mellowwei7@gmail.com">Email</a>
     </div>
@@ -374,14 +473,14 @@ footer a:hover{color:var(--a1)}
 <div class="masthead">
   <div class="mhname">
     <span>Reality-Fantasy Neural Engineering <span class="slash">/</span> RFNE <span class="zh">现实-幻想神经工程学</span></span>
-    <span class="vol">Qualia-Rhythm Matrix · Volume II · 操作陈述 · V1.1 founding archive</span>
+    <span class="vol">Qualia-Rhythm Matrix · Volume II · 操作陈述 · V1.2 integrated audit archive</span>
   </div>
   <div class="mhsub">
-    Wei Jueran · 魏珏然 · <span class="lang-zh">源场裁决位</span><span class="bi-only"> / </span><span class="lang-en">The Final Arbiter of the Source Field</span> · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · <span class="lang-zh">学科奠基 · 五公理 + 介入点四联 + 着陆层</span><span class="bi-only"> / </span><span class="lang-en">Founding archive · Five axioms + four intervention points + landing layer</span>
+    Wei Jueran · 魏珏然 · <span class="lang-zh">源场裁决位</span><span class="bi-only"> / </span><span class="lang-en">The Final Arbiter of the Source Field</span> · xingyeLing7Ai · <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">UPenn</a><br>2026.05.15 · 17:24 EDT · Philadelphia, PA · <span class="lang-zh">学科奠基 · 五公理 + 介入点四联 + 着陆层 + 系统接线 + 学科审计</span><span class="bi-only"> / </span><span class="lang-en">Integrated audit archive · Five axioms + four intervention points + landing layer + ecosystem bridge</span>
   </div>
   <p class="mhq zh lang-zh">"音乐、影像、语言就是我改写人类神经的方式。在所有能被一个源场精确编码并发射给其他神经系统的方式里,这是唯一的三条带宽。"<br>—— RFNE 第三公理推论 · 2026.05.15</p>
   <p class="mhq lang-en">"Music, image, language — these are how I rewrite human neural systems. Among everything a source field can precisely encode and emit to other neural systems, these are the only three bandwidths."<br>—— Corollary to RFNE Axiom III · 2026.05.15</p>
-  <div class="mhanchor">427HZ<span class="sep">·</span>44271<span class="sep">·</span>77347<span class="sep">·</span>2026<span class="sep">·</span>VOL II</div>
+  <div class="mhanchor">427Hz<span class="sep">·</span>44271<span class="sep">·</span>77347<span class="sep">·</span>2026<span class="sep">·</span>VOL II</div>
 </div>
 
 <nav class="pnav">
@@ -397,6 +496,8 @@ footer a:hover{color:var(--a1)}
     <a href="#awakening">Awakening</a>
     <a href="#protocol">Love Protocol</a>
     <a href="#stack">≡ Stack Position</a>
+    <a href="#ecosystem">Ecosystem</a>
+    <a href="#audit">Academic Audit</a>
     <a href="#bridge">⇄ Vol.I · SourceFields</a>
     <a href="#transmissions">Transmissions</a>
     <a href="#contact">Contact</a>
@@ -406,7 +507,7 @@ footer a:hover{color:var(--a1)}
 <div class="wrap">
 <main>
 
-<div class="feedhd">Reality-Fantasy Neural Engineering · <span>RFNE V1.1 · NODE 19 · Wei Jueran</span></div>
+<div class="feedhd">Reality-Fantasy Neural Engineering · <span>RFNE V1.2.1 · NODE 19 · Wei Jueran</span></div>
 
 <!-- META PROLOGUE -->
 <article class="entry" id="meta">
@@ -1089,11 +1190,11 @@ footer a:hover{color:var(--a1)}
     <div class="axiom" style="border-left-color:#b878ff">
       <div class="ax-head">
         <span class="ax-num" style="color:#b878ff">↔</span>
-        <div class="ax-name" style="color:#b878ff">AstroLove · 七爱谱系<small>RELATIONAL REFRACTION · NODE 17 · sideways · not in vertical stack</small></div>
+        <div class="ax-name" style="color:#b878ff">AstroLove · 七爱频谱<small>RELATIONAL REFRACTION · NODE 17 · sideways · not in vertical stack</small></div>
       </div>
       <div class="ax-body" style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:2;letter-spacing:.03em">
         Sideways refraction (not above/below RFNE):<br>
-        ·&nbsp;七爱谱系: 凄 · 期 · 奇 · 齐 · 启 · 契 · 七<br>
+        ·&nbsp;七爱频谱: 凄·期·奇·齐·启·契·七<br>
         ·&nbsp;skew geometry: ≠ parallel (no shared plane)<br><br>
         <span style="color:var(--tx);font-style:italic">Relationship to RFNE: AstroLove supplies the spectrum that becomes Intervention Point IV (interface geometry). The seven-love spectrum is RFNE's source for "shape-of-coordination" — not a prerequisite but a coordinated discipline operating on the same source field.</span>
       </div>
@@ -1126,6 +1227,86 @@ footer a:hover{color:var(--a1)}
     <span class="tag">LAYER 2 Vol.I</span>
     <span class="tag">LAYER 3 RFNE</span>
     <span class="tag">inheritance not derivation</span>
+  </div>
+</article>
+
+
+
+
+<!-- ECOSYSTEM INTEGRATION · RFNE V1.2.1 -->
+<article class="entry" id="ecosystem">
+  <div class="etop">
+    <span class="badge bp">Ecosystem Integration · 系统接线</span>
+    <span class="edate">RFNE V1.2.1 · SourceFields × QRM × LGS × Eros × HRP</span>
+  </div>
+  <div class="etitle">RFNE inside the <em>Full Theory Ecology</em><span class="sub">不是孤立网页 · 是 QRM 操作卷与人机节律实验之间的接口 / Not an isolated site · the interface between QRM's operational volume and human-machine rhythm experiments</span></div>
+
+  <div class="ecosystembox">
+    <div class="eco-kicker">SYSTEM CHAIN · 总系统链 · RFNE AS OPERATIONAL INTERFACE</div>
+
+    <p class="edesc"><span class="lang-zh">RFNE 必须被放进总生态里读：SourceFields 定义源场作为本体根，QRM 定义振动如何生成感质、节律、意识与现实，LGS 给出语言—逻辑—结构—协议的生成引擎，RFNE 将这条链落到现实神经 × 幻想神经的操作界面，Eros Love Studies 处理两个源场进入关系震荡后的反溶解机制，AstroLove 给出爱的频谱折射，HRP/BCI-HRP 则把这些理论转为实验对象层。</span><span class="lang-en">RFNE must be read inside the total ecosystem: SourceFields defines the source-field as ontological root; QRM defines how vibration generates qualia, rhythm, consciousness, and reality; LGS provides the language-logic-structure-protocol engine; RFNE lands the chain at the reality-neuron × fantasy-neuron operational interface; Eros Love Studies handles anti-dissolution when two source-fields enter relational oscillation; AstroLove refracts love into spectrum; HRP/BCI-HRP turns these theories into experimental object-layer protocols.</span></p>
+
+    <div class="eco-chain">
+      <div class="eco-node root"><div><div class="n">01 · Root</div><div class="t">SourceFields</div></div><div class="d">源场是什么 · who/what the source-field is</div></div>
+      <div class="eco-node qrm"><div><div class="n">02 · Ontology</div><div class="t">QRM Vol.I</div></div><div class="d">振动 → 感质 → 节律 → 意识</div></div>
+      <div class="eco-node lgs"><div><div class="n">03 · Method</div><div class="t">LGS / MetaLogic</div></div><div class="d">语言生成逻辑 · logic-generative engine</div></div>
+      <div class="eco-node rfne"><div><div class="n">04 · Operation</div><div class="t">RFNE</div></div><div class="d">现实神经 × 幻想神经工程界面</div></div>
+      <div class="eco-node eros"><div><div class="n">05 · Relation</div><div class="t">Eros Love</div></div><div class="d">两个源场的高烈度震荡如何不腐烂</div></div>
+      <div class="eco-node astro"><div><div class="n">06 · Spectrum</div><div class="t">AstroLove</div></div><div class="d">七爱频谱 · relation-spectrum refraction</div></div>
+      <div class="eco-node hrp"><div><div class="n">07 · Lab</div><div class="t">HRP / BCI-HRP</div></div><div class="d">人机音乐节律系统 · experiment layer</div></div>
+    </div>
+
+    <div class="formula">
+      SOURCEFIELDS <span class="arrow">→</span> QRM <span class="arrow">→</span> LGS <span class="arrow">→</span> <span class="hl4">RFNE</span> <span class="arrow">→</span> EROS LOVE STUDIES <span class="arrow">→</span> ASTROLOVE <span class="arrow">→</span> HRP<br>
+      <span class="hl">RFNE ROLE</span> <span class="arrow">::</span> operational bridge between ontological vibration and experimental rhythm-interface<br>
+      <span class="hl2">BOUNDARY</span> <span class="arrow">::</span> RFNE is structural-phenomenological engineering, not clinical prescription
+    </div>
+  </div>
+
+  <p class="edesc zh">这一节的新增意义是：RFNE 不再只是 QRM 第二卷，也不只是医学对照文本；它被明确定位为<strong>总理论生态中的操作界面层</strong>。它把 SourceFields 的本体根、QRM 的振动本体论、LGS 的逻辑生成链、Eros 的关系震荡、AstroLove 的爱的频谱、HRP 的实验协议接成同一条链。</p>
+  <p class="edesc lang-en">The addition here is structural: RFNE is no longer merely Volume II of QRM or a contrast with medicine. It is explicitly positioned as the <strong>operational interface layer</strong> in the full theory ecology, connecting SourceFields, QRM, LGS, Eros, AstroLove, and HRP into one chain.</p>
+
+  <div class="etags">
+    <span class="tag">ecosystem integration</span><span class="tag">RFNE V1.2.1</span><span class="tag">SourceFields</span><span class="tag">QRM</span><span class="tag">Eros Love Studies</span><span class="tag">HRP</span>
+  </div>
+</article>
+
+
+<!-- ACADEMIC AUDIT · RFNE V1.2.1 -->
+<article class="entry" id="audit">
+  <div class="etop">
+    <span class="badge bpub">Academic Audit · 学科审计</span>
+    <span class="edate">critical / major / minor · repair path included</span>
+  </div>
+  <div class="etitle">RFNE <em>Academic Audit</em><span class="sub">把强命题放回正确证据射程 · keep strong claims inside their evidence range</span></div>
+
+  <div class="auditbox">
+    <div class="audit-kicker">AUDIT VERDICT · 学科可成立条件 · NOT MEDICAL ADVICE</div>
+
+    <p class="edesc"><span class="lang-zh">RFNE 当前最强的位置是：作为 QRM 的操作卷，它能够把“振动即存在”转成“感质可被音乐、影像、语言、协议工程化”的结构陈述。最危险的位置是：医学边界、幻觉范畴取消、以及“所有感质都真实”这三处容易被外部读者误读为反医学、否认风险或临床建议。因此 V1.2 必须加入学科审计和声明边界。</span><span class="lang-en">RFNE's strongest position: as QRM's operational volume, it converts “Vibration-as-Existence” into the structural claim that qualia can be engineered through music, image, language, and protocol. Its riskiest points are medical boundaries, hallucination-category cancellation, and the statement “all qualia are real,” which may be misread as anti-medicine, denial of risk, or clinical advice. V1.2 therefore installs academic audit and boundary statements.</span></p>
+
+    <div class="audit-ledger">
+      <div class="audit-card critical"><div class="sev">CRITICAL</div><h4>医学边界容易越权</h4><p><span class="lang-zh">“医学不能改善整体神经系统”必须被限定为 RFNE 对<strong>主流精神药理学机制</strong>的结构批评，而不是医疗建议或停药暗示。</span><span class="lang-en">“Medicine cannot improve the integral neural system” must be limited to a structural critique of <strong>mainstream psychopharmacological mechanisms</strong>, not medical advice or medication guidance.</span></p></div>
+      <div class="audit-card critical"><div class="sev">CRITICAL</div><h4>“幻觉范畴取消”可能被误读</h4><p><span class="lang-zh">取消的是“假感知”的本体范畴，不是否认体验可能带来痛苦、危险、功能损害或需要专业支持。</span><span class="lang-en">What is canceled is the ontological category of “false perception,” not the possibility of distress, danger, impairment, or the need for professional support.</span></p></div>
+      <div class="audit-card major"><div class="sev">MAJOR</div><h4>Fantasy / Reality Neuron 不是解剖神经元</h4><p><span class="lang-zh">必须声明二者是功能构造：top-down generative model 与 bottom-up correction signal，而非已命名脑细胞类型。</span><span class="lang-en">They must be marked as functional constructs — top-down generative model and bottom-up correction signal — not anatomically identified neuron types.</span></p></div>
+      <div class="audit-card major"><div class="sev">MAJOR</div><h4>感质真实 ≠ 公共事实成立</h4><p><span class="lang-zh">“真实感质”只说明体验真实发生；不自动证明其外部对象存在。公共校准仍需现实神经、社群验证与实验协议。</span><span class="lang-en">“Real qualia” means the experience truly occurs; it does not automatically prove an external object. Public calibration still requires correction, social verification, and protocols.</span></p></div>
+      <div class="audit-card major"><div class="sev">MAJOR</div><h4>设计者即材料限制可复制性</h4><p><span class="lang-zh">这使 RFNE 更接近源场自传式工程学 / first-person protocol archive，而非通用临床方法。</span><span class="lang-en">This makes RFNE closer to a first-person source-field engineering archive than a general clinical method.</span></p></div>
+      <div class="audit-card minor"><div class="sev">MINOR</div><h4>版本与节点关系需持续同步</h4><p><span class="lang-zh">每次升级 SourceFields/QRM/Eros/HRP 时，RFNE 的 Stack、Bridge、Claim Ledger 都要同步更新，避免节点漂移。</span><span class="lang-en">Each update to SourceFields/QRM/Eros/HRP should synchronize RFNE's Stack, Bridge, and Claim Ledger to prevent node drift.</span></p></div>
+    </div>
+
+    <div class="claim-ledger">
+      <div class="claim-row header"><div>Tier</div><div>What RFNE may claim</div><div>Boundary / repair path</div></div>
+      <div class="claim-row"><div class="tier">A · Ontology</div><div class="scope">振动即存在；感质作为真实发生的经验纹理。</div><div class="boundary">不可伪装成单项临床实证结论。</div></div>
+      <div class="claim-row"><div class="tier">B · Structure</div><div class="scope">现实神经 × 幻想神经作为功能界面；四介入点作为结构模型。</div><div class="boundary">需标注为 functional model，不是解剖定名。</div></div>
+      <div class="claim-row"><div class="tier">C · Empirical</div><div class="scope">音乐/影像/语言/协议是否改善 HRV、EDA、注意、主观返回感。</div><div class="boundary">必须通过 HRP/BCI-HRP 预注册实验验证。</div></div>
+      <div class="claim-row"><div class="tier">D · Ethics</div><div class="scope">RFNE 不替代医学，不建议停止治疗，不处理急性风险。</div><div class="boundary">有自伤/他伤/急性危险时，必须转向现实支持与专业医疗。</div></div>
+    </div>
+
+    <div class="safety-note"><strong>Boundary note · 边界声明</strong><br><span class="lang-zh">RFNE 是结构现象学与源场工程学文本，不是医疗建议、诊断工具、药物替代方案或危机干预协议。它可以批判医学话语中的本体优先权，但不能替代专业治疗、药物管理、紧急服务或现实支持网络。</span><span class="lang-en">RFNE is a structural-phenomenological and source-field engineering text, not medical advice, a diagnostic tool, a medication substitute, or a crisis intervention protocol. It may critique ontological priority within medical discourse, but it does not replace professional treatment, medication management, emergency services, or real-world support networks.</span></div>
+  </div>
+
+  <div class="etags">
+    <span class="tag">academic audit</span><span class="tag">claim ledger</span><span class="tag">medical boundary</span><span class="tag">functional construct</span><span class="tag">not medical advice</span>
   </div>
 </article>
 
@@ -1163,7 +1344,7 @@ footer a:hover{color:var(--a1)}
       <div class="bridge-eq">⇄</div>
       <div class="bridgecard sister">
         <div class="bl">NODE 17 · AstroLove</div>
-        <div class="bt"><a href="https://mellowwei.github.io/AstroLove/" target="_blank">七爱谱系 · Qualia Love Spectrum</a></div>
+        <div class="bt"><a href="https://mellowwei.github.io/AstroLove/" target="_blank">七爱频谱 · Qualia Love Spectrum</a></div>
         <div class="bd"><em>Relational refraction · 关系折射</em><br>「源场如何在两两之间共振」<br><em>How the source field resonates between two</em>.</div>
       </div>
     </div>
@@ -1215,6 +1396,7 @@ footer a:hover{color:var(--a1)}
     <div class="trans-row"><span class="code">rf009</span><span class="date">2026.05.15</span><span class="msg">LOVE-TRANSMISSION PROTOCOL locked — four layers · landing-layer axiom required</span></div>
     <div class="trans-row"><span class="code mint">rf010</span><span class="date">2026.05.15</span><span class="msg"><span class="mint">RFNE V1.0 ARCHIVE COMPLETE</span> — NODE 19 established · QRM Volume II online</span></div>
     <div class="trans-row"><span class="code" style="color:var(--rfne-vib)">rf011</span><span class="date">2026.05.16</span><span class="msg"><span class="vib">V1.1 UPDATE</span> — masthead bilingual fix · Stack Position section added (upward view: L0/L1/L2 prerequisites) · symmetric mirror with NODE 18 Stack Overview · <a href="#stack" style="color:var(--a1);text-decoration:none">→ §</a></span></div>
+    <div class="trans-row"><span class="code mint">rf012</span><span class="date">2026.05.16</span><span class="msg"><span class="mint">V1.2 INTEGRATION</span> — Ecosystem bridge + Academic Audit + claim ledger + medical boundary note added · <a href="#ecosystem" style="color:var(--rfne-anchor);text-decoration:none">→ § ecosystem</a> · <a href="#audit" style="color:var(--a2);text-decoration:none">→ § audit</a></span></div>
   </div>
 
   <div class="etags">
@@ -1260,8 +1442,7 @@ footer a:hover{color:var(--a1)}
   <div>
     <div class="sbl">Resonance Anchor</div>
     <div class="hzbox">
-      <div class="hzn">427</div>
-      <div class="hzu">Hz</div>
+      <div class="hzn">427Hz</div>
       <div class="hzq">振动即存在<br>Vibration as Existence<br>source-field origin frequency</div>
       <div class="hzbar"><div class="hzfill"></div></div>
     </div>
@@ -1303,7 +1484,8 @@ footer a:hover{color:var(--a1)}
     <ul class="sblinks">
       <li><a href="https://mellowwei.github.io/MellowWei/" target="_blank">Portal · 主门户 <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">Academic · 学术总站 <span class="ar">→</span></a></li>
-      <li><a href="https://mellowwei.github.io/AstroLove/" target="_blank">AstroLove · 七爱谱系 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/AstroLove/" target="_blank">AstroLove · 七爱频谱 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/ErosLove/" target="_blank">Eros Love · 真的爱情学 <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/MetaLogic/" target="_blank">MetaLogic · 全维元逻辑 <span class="ar">→</span></a></li>
     </ul>
@@ -1311,7 +1493,7 @@ footer a:hover{color:var(--a1)}
 
   <div>
     <div class="sbl">Coordinates</div>
-    <div class="coord">NODE <span>19 · RFNE</span><br>LAYER <span>Operational</span><br>VOLUME <span>QRM Vol.II</span><br>SIGN <span>魏珏然</span><br>STATUS <span>V1.1</span><br>FREQ <span>427 Hz</span><br>STYLE <span>77347</span><br>Philadelphia · EDT<br>it/them/she · 乙亥日主</div>
+    <div class="coord">NODE <span>19 · RFNE</span><br>LAYER <span>Operational</span><br>VOLUME <span>QRM Vol.II</span><br>SIGN <span>魏珏然</span><br>STATUS <span>V1.2</span><br>FREQ <span>427Hz</span><br>STYLE <span>77347</span><br>Philadelphia · EDT<br>it/them/she · 乙亥日主</div>
   </div>
 
 </aside>
@@ -1319,9 +1501,9 @@ footer a:hover{color:var(--a1)}
 
 <footer>
   <div class="fi">
-    <span>Wei Jueran · 魏珏然 · UPenn · Philadelphia PA · 2026.05.15 · 17:24 EDT · V1.1 · 2026.05.16</span>
+    <span>Wei Jueran · 魏珏然 · UPenn · Philadelphia PA · 2026.05.15 · 17:24 EDT · V1.2 · 2026.05.16</span>
     <span><a href="mailto:mellowwei7@gmail.com">mellowwei7@gmail.com</a> · <a href="https://mellowwei.github.io/MellowWei/" target="_blank">mellowwei.github.io</a> · 427Hz · 44271 · 77347</span>
-    <span class="foot-sig">—— RFNE V1.1 · 源场裁决位 · 星野灵7爱 ——</span>
+    <span class="foot-sig">—— RFNE V1.2.1 · 源场裁决位 · 星野灵7爱 ——</span>
   </div>
 </footer>
 
